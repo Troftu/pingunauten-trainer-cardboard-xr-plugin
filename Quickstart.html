@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="google-signin-client-id" content="721724668570-nbkv1cfusk7kk4eni4pjvepaus73b13t.apps.googleusercontent.com">
+    <meta name="google-signin-scope" content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award">
+    <meta property="og:site_name" content="Google for Developers">
+    <meta property="og:type" content="website"><meta name="theme-color" content="#0288d1"><meta charset="utf-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <link rel="manifest" href="https://developers.google.com/_pwa/developers/manifest.json" crossorigin="use-credentials">
+    <link rel="preconnect" href="https://www.gstatic.com/" crossorigin="">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin="">
+    <link rel="preconnect" href="https://apis.google.com/" crossorigin="">
+    <link rel="preconnect" href="https://www.google-analytics.com/" crossorigin=""><link rel="stylesheet" href="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/css.css">
+      <link rel="stylesheet" href="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/css2.css"><link rel="stylesheet" href="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/app.css">
+      <link rel="shortcut icon" href="https://www.gstatic.com/devrel-devsite/prod/v47124a092dd56bf2680cfca4b2ab69e9e6a534f056a1a0dbc4abcaa7cdbba977/developers/images/favicon-new.png">
+    <link rel="apple-touch-icon" href="https://www.gstatic.com/devrel-devsite/prod/v47124a092dd56bf2680cfca4b2ab69e9e6a534f056a1a0dbc4abcaa7cdbba977/developers/images/touchicon-180-new.png"><link rel="canonical" href="https://developers.google.com/cardboard/develop/unity/quickstart"><link rel="search" type="application/opensearchdescription+xml" title="Google for Developers" href="https://developers.google.com/s/opensearch.xml">
+      <link rel="alternate" hreflang="en" href="https://developers.google.com/cardboard/develop/unity/quickstart"><link rel="alternate" hreflang="x-default" href="https://developers.google.com/cardboard/develop/unity/quickstart"><link rel="alternate" hreflang="ar" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=ar"><link rel="alternate" hreflang="bn" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=bn"><link rel="alternate" hreflang="zh-Hans" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=zh-cn"><link rel="alternate" hreflang="zh-Hant" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=zh-tw"><link rel="alternate" hreflang="fa" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=fa"><link rel="alternate" hreflang="fr" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=fr"><link rel="alternate" hreflang="de" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=de"><link rel="alternate" hreflang="he" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=he"><link rel="alternate" hreflang="hi" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=hi"><link rel="alternate" hreflang="id" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=id"><link rel="alternate" hreflang="it" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=it"><link rel="alternate" hreflang="ja" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=ja"><link rel="alternate" hreflang="ko" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=ko"><link rel="alternate" hreflang="pl" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=pl"><link rel="alternate" hreflang="pt-BR" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=pt-br"><link rel="alternate" hreflang="ru" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=ru"><link rel="alternate" hreflang="es-419" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=es-419"><link rel="alternate" hreflang="th" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=th"><link rel="alternate" hreflang="tr" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=tr"><link rel="alternate" hreflang="vi" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=vi"><title>Quickstart for Google Cardboard for Unity &nbsp;|&nbsp; Google for Developers</title>
+
+<meta property="og:title" content="Quickstart for Google Cardboard for Unity &nbsp;|&nbsp; Google for Developers"><meta property="og:url" content="https://developers.google.com/cardboard/develop/unity/quickstart"><meta property="og:image" content="https://www.gstatic.com/devrel-devsite/prod/v47124a092dd56bf2680cfca4b2ab69e9e6a534f056a1a0dbc4abcaa7cdbba977/developers/images/opengraph/light-blue.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675"><meta property="og:locale" content="en"><meta name="twitter:card" content="summary_large_image"><script async="" src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/google-analytics_analytics.js" nonce=""></script><script type="text/javascript">Object.defineProperty(window, 'rwt', {    value: function() { return true; },    writable: false,    configurable: false});</script><script async="" src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/app_loader.js"></script><script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    
+    "headline": "Quickstart for Google Cardboard for Unity"
+  }
+</script><script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cardboard",
+      "item": "https://developers.google.com/cardboard"
+    },{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Quickstart for Google Cardboard for Unity",
+      "item": "https://developers.google.com/cardboard/develop/unity/quickstart"
+    }]
+  }
+  </script>
+  
+
+  
+
+  
+
+
+    
+      <link rel="stylesheet" href="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/extras.css"><script src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/devsite_app_module.js" nonce=""></script><script src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/devsite_app_custom_elements_module.js" nonce=""></script><script src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/devsite_devsite_a11y_announce_module.js" nonce=""></script><script src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/devsite_devsite_analytics_module.js" nonce=""></script><script src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/devsite_devsite_badger_module.js" nonce=""></script><script src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/devsite_devsite_book_nav_module.js" nonce=""></script><script src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/devsite_devsite_bookmark_module.js" nonce=""></script><script src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/devsite_devsite_code_module.js" nonce=""></script><script src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/devsite_devsite_content_module.js" nonce=""></script><script src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/devsite_devsite_feature_tooltip_module.js" nonce=""></script><script src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/devsite_devsite_footer_linkboxes_module.js" nonce=""></script><script src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/devsite_devsite_footer_promos_module.js" nonce=""></script><script src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/devsite_devsite_footer_utility_module.js" nonce=""></script><script src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/devsite_devsite_header_module.js" nonce=""></script><script src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/devsite_devsite_heading_link_module.js" nonce=""></script><script src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/devsite_devsite_language_selector_module.js" nonce=""></script><script src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/devsite_devsite_notification_module.js" nonce=""></script><script src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/devsite_devsite_panel_module.js" nonce=""></script><script src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/devsite_devsite_progress_module.js" nonce=""></script><script src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/devsite_devsite_recommendations_module.js" nonce=""></script><script src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/devsite_devsite_recommendations_dropdown_module.js" nonce=""></script><script src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/devsite_devsite_recommendations_sidebar_module.js" nonce=""></script><script src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/devsite_devsite_search_module.js" nonce=""></script><script src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/devsite_devsite_sitemask_module.js" nonce=""></script><script src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/devsite_devsite_snackbar_module.js" nonce=""></script><script src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/devsite_devsite_tabs_module.js" nonce=""></script><script src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/devsite_devsite_thumb_rating_module.js" nonce=""></script><script src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/devsite_devsite_toc_module.js" nonce=""></script><script src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/devsite_devsite_tooltip_module.js" nonce=""></script><script src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/devsite_devsite_user_module.js" nonce=""></script><script src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/devsite_devsite_dialog_module.js" nonce=""></script><script src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/devsite_devsite_fast_track_profile_creator_module.js" nonce=""></script><script src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/devsite_devsite_badge_awarded_module.js" nonce=""></script><script src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/devsite_devsite_spinner_module.js" nonce=""></script><script src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/devsite_devsite_mwc_module.js" nonce=""></script><script src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/devsite_devsite_feedback_module.js" nonce=""></script><style type="text/css"></style><script src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/devsite_devsite_dropdown_list_module.js" nonce=""></script><script src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/devsite_devsite_checkbox_module.js" nonce=""></script></head>
+  <body class="" template="page" theme="light-blue" type="article" layout="docs" style="--devsite-js-header-height: 120px; --devsite-panel-height: 0px;" ready="">
+    <devsite-progress id="app-progress"></devsite-progress>
+  
+    <section class="devsite-wrapper"><devsite-header top-row--height="48" bottom-row--height="72" bottom-tabs--height="0" style="--devsite-js-top-row--height: 48px; --devsite-js-bottom-row--height: 72px; --devsite-js-bottom-tabs--height: 0px;" fixed="">
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-header--inner nocontent">
+  <div class="devsite-top-logo-row-wrapper-wrapper">
+    <div class="devsite-top-logo-row-wrapper">
+      <div class="devsite-top-logo-row">
+        <button type="button" id="devsite-hamburger-menu" class="devsite-header-icon-button button-flat material-icons gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Navigation menu button" aria-label="Open menu">
+        </button>
+        <div class="devsite-product-name-wrapper">
+
+  
+    
+  
+
+
+
+  
+  
+  <span class="devsite-product-name">
+    <ul class="devsite-breadcrumb-list">
+  
+  <li class="devsite-breadcrumb-item
+             ">
+    
+    
+    
+      
+      
+        
+  <a href="https://developers.google.com/cardboard" class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Upper Header" data-value="1" track-type="globalNav" track-name="breadcrumb" track-metadata-position="1" track-metadata-eventdetail="Cardboard">
+    
+          Cardboard
+        
+  </a>
+  
+      
+    
+  </li>
+  
+</ul>
+  </span>
+
+</div>
+        <div class="devsite-top-logo-row-middle">
+          <div class="devsite-header-upper-tabs">
+            
+              
+              
+  <devsite-tabs class="upper-tabs" connected="">
+
+    
+
+  <nav class="devsite-tabs-wrapper" aria-label="Upper tabs">
+      
+        
+          <tab active="">
+            
+    <a href="https://developers.google.com/cardboard/develop" track-metadata-eventdetail="https://developers.google.com/cardboard/develop" class="devsite-tabs-content gc-analytics-event " track-type="nav" track-metadata-position="nav - develop" track-metadata-module="primary nav" aria-label="Develop, selected" data-category="Site-Wide Custom Events" data-label="Tab: Develop" track-name="develop">
+    Develop
+  
+    </a>
+  
+  
+          </tab>
+        
+      
+        
+          <tab>
+            
+    <a href="https://developers.google.com/cardboard/reference" track-metadata-eventdetail="https://developers.google.com/cardboard/reference" class="devsite-tabs-content gc-analytics-event " track-type="nav" track-metadata-position="nav - reference" track-metadata-module="primary nav" data-category="Site-Wide Custom Events" data-label="Tab: Reference" track-name="reference">
+    Reference
+  
+    </a>
+  
+  
+          </tab>
+        
+      
+        
+          <tab>
+            
+    <a href="https://developers.google.com/cardboard/community" track-metadata-eventdetail="https://developers.google.com/cardboard/community" class="devsite-tabs-content gc-analytics-event " track-type="nav" track-metadata-position="nav - community" track-metadata-module="primary nav" data-category="Site-Wide Custom Events" data-label="Tab: Community" track-name="community">
+    Community
+  
+    </a>
+  
+  
+          </tab>
+        
+      
+    <tab overflow-tab="" hidden=""><a href="#" class="devsite-icon devsite-icon-arrow-drop-down">More</a><div class="devsite-tabs-overflow-menu" scrollbars="" hidden=""></div></tab></nav></devsite-tabs>
+
+            
+           </div>
+          
+<devsite-search aria-expanded="false" aria-haspopup="listbox" enable-signin="" enable-search="" enable-suggestions="" enable-query-completion="" project-name="Cardboard" tenant-name="Google for Developers" project-scope="/cardboard" url-scoped="https://developers.google.com/s/results/cardboard" role="combobox">
+  <form class="devsite-search-form" action="https://developers.google.com/s/results" method="GET">
+    <div class="devsite-search-container">
+      <div class="devsite-searchbox">
+        <input aria-activedescendant="" aria-autocomplete="list" aria-label="Search" aria-haspopup="false" aria-multiline="false" autocomplete="off" class="devsite-search-field devsite-search-query" name="q" placeholder="Search" role="searchbox" type="text" aria-controls="devsite-search-popout-container-id-1">
+        <div class="devsite-search-image material-icons" aria-hidden="true"></div>
+      </div>
+      <button type="button" search-open="" class="devsite-search-button devsite-header-icon-button button-flat material-icons" aria-label="Open search"></button>
+    </div>
+  <div class="devsite-popout" id="devsite-search-popout-container-id-1"><div class="devsite-popout-result devsite-suggest-results-container" devsite-hide=""></div></div></form>
+  <button type="button" search-close="" class="devsite-search-button devsite-header-icon-button button-flat material-icons" aria-label="Close search"></button>
+</devsite-search>
+
+        <div class="devsite-search-background" style="opacity: 1;"></div></div>
+
+        
+
+        
+
+        
+
+        
+<devsite-language-selector aria-label="Select your language preference.">
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" aria-current="true" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=en" lang="en">English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=id" lang="id">Bahasa Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=de" lang="de">Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=es" lang="es">Español</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=es-419" lang="es-419">Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=fr" lang="fr">Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=it" lang="it">Italiano</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=pl" lang="pl">Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=pt-br" lang="pt-br">Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=vi" lang="vi">Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=tr" lang="tr">Türkçe</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=ru" lang="ru">Русский</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=he" lang="he">עברית</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=ar" lang="ar">العربيّة</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=fa" lang="fa">فارسی</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=hi" lang="hi">हिंदी</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=bn" lang="bn">বাংলা</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=th" lang="th">ภาษาไทย</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=zh-cn" lang="zh-cn">中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=zh-tw" lang="zh-tw">中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=ja" lang="ja">日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=ko" lang="ko">한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+
+        
+
+        
+          
+          
+          <devsite-user enable-profiles="" fp-auth="" id="devsite-user" sign-in-url="https://developers.google.com/_d/signin?continue=https%3A%2F%2Fdevelopers.google.com%2Fcardboard%2Fdevelop%2Funity%2Fquickstart%3Fhl%3Den&amp;prompt=select_account" sign-out-url="https://developers.google.com/_d/signout?continue=https%3A%2F%2Fdevelopers.google.com%2Fcardboard%2Fdevelop%2Funity%2Fquickstart%3Fhl%3Den" url="https://developers.google.com/_d/signout?continue=https%3A%2F%2Fdevelopers.google.com%2Fcardboard%2Fdevelop%2Funity%2Fquickstart%3Fhl%3Den"><div class="ogb-wrapper ogb-si"><a href="https://developers.google.com/_d/signin?continue=https%3A%2F%2Fdevelopers.google.com%2Fcardboard%2Fdevelop%2Funity%2Fquickstart%3Fhl%3Den&amp;prompt=select_account" class="devsite-user-signin button devsite-top-button" track-type="globalNav" track-name="signIn" track-metadata-eventdetail="nav" track-metadata-position="nav">
+  Sign in
+</a></div></devsite-user>
+           
+        
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="devsite-collapsible-section
+    
+      devsite-header-no-lower-tabs
+    " style="transform: translate3d(0px, 0px, 0px);">
+    <div class="devsite-header-background">
+      
+        
+          <div class="devsite-product-id-row">
+            <div class="devsite-product-description-row">
+              
+                
+                  
+                  
+                  <ul class="devsite-breadcrumb-list">
+  
+  <li class="devsite-breadcrumb-item
+             ">
+    
+    
+    
+      
+  <a href="https://developers.google.com/cardboard/develop" class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Lower Header" data-value="1" track-type="globalNav" track-name="breadcrumb" track-metadata-position="1" track-metadata-eventdetail="">
+    
+        Develop
+      
+  </a>
+  
+    
+  </li>
+  
+</ul>
+                
+              
+              
+            </div>
+            
+          </div>
+          
+        
+      
+      
+    </div>
+  </div>
+
+</div>
+
+
+
+  
+
+  
+</devsite-header>
+      <div class="devsite-book-nav-bg" fixed=""></div><devsite-book-nav scrollbars="" fixed="" style="top: 120px; max-height: 1080px;">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-book-nav-filter
+            ">
+  <input type="text" placeholder="Filter" aria-label="Type to filter" role="searchbox">
+  
+  <span class="filter-clear-button hidden" data-title="Clear filter" aria-label="Clear filter" role="button" tabindex="0"></span>
+</div>
+
+<nav class="devsite-book-nav devsite-nav nocontent" aria-label="Side menu">
+  <div class="devsite-mobile-header">
+    <button type="button" id="devsite-close-nav" class="devsite-header-icon-button button-flat material-icons gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Close navigation" aria-label="Close navigation">
+    </button>
+    <div class="devsite-product-name-wrapper">
+
+  
+    
+  
+
+
+  
+      <span class="devsite-product-name">
+        
+        
+        <ul class="devsite-breadcrumb-list">
+  
+  <li class="devsite-breadcrumb-item
+             ">
+    
+    
+    
+      
+      
+        
+  <a href="https://developers.google.com/cardboard" class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Upper Header" data-value="1" track-type="globalNav" track-name="breadcrumb" track-metadata-position="1" track-metadata-eventdetail="Cardboard">
+    
+          Cardboard
+        
+  </a>
+  
+      
+    
+  </li>
+  
+</ul>
+      </span>
+    
+
+</div>
+  </div>
+
+  <div class="devsite-book-nav-wrapper">
+    <div class="devsite-mobile-nav-top">
+      
+        <ul class="devsite-nav-list">
+          
+            <li class="devsite-nav-item">
+              
+  
+  <a href="https://developers.google.com/cardboard/develop" class="devsite-nav-title gc-analytics-event devsite-nav-has-children" data-category="Site-Wide Custom Events" data-label="Tab: Develop" track-name="develop" track-type="globalNav" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip="">
+      Develop
+   </span>
+    
+    <span class="devsite-nav-icon material-icons" data-icon="forward">
+    </span>
+    
+  
+  </a>
+  
+
+  
+              
+            </li>
+          
+            <li class="devsite-nav-item">
+              
+  
+  <a href="https://developers.google.com/cardboard/reference" class="devsite-nav-title gc-analytics-event
+              devsite-nav-has-children
+              " data-category="Site-Wide Custom Events" data-label="Tab: Reference" track-name="reference" track-type="globalNav" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip="">
+      Reference
+   </span>
+    
+    <span class="devsite-nav-icon material-icons" data-icon="forward">
+    </span>
+    
+  
+  </a>
+  
+
+  
+              
+            </li>
+          
+            <li class="devsite-nav-item">
+              
+  
+  <a href="https://developers.google.com/cardboard/community" class="devsite-nav-title gc-analytics-event
+              devsite-nav-has-children
+              " data-category="Site-Wide Custom Events" data-label="Tab: Community" track-name="community" track-type="globalNav" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip="">
+      Community
+   </span>
+    
+    <span class="devsite-nav-icon material-icons" data-icon="forward">
+    </span>
+    
+  
+  </a>
+  
+
+  
+              
+            </li>
+          
+          
+          
+        </ul>
+      
+    </div>
+    
+      <div class="devsite-mobile-nav-bottom" role="navigation">
+        
+          
+          <ul class="devsite-nav-list" menu="_book">
+            <li class="devsite-nav-item"><a href="https://developers.google.com/cardboard/develop" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /cardboard/develop" track-type="bookNav" track-name="click" track-metadata-eventdetail="/cardboard/develop"><span class="devsite-nav-text" tooltip="">Overview</span></a></li>
+
+  <li class="devsite-nav-item"><a href="https://developers.google.com/cardboard/develop/branding-guidelines" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /cardboard/develop/branding-guidelines" track-type="bookNav" track-name="click" track-metadata-eventdetail="/cardboard/develop/branding-guidelines"><span class="devsite-nav-text" tooltip="">Branding guidelines</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-accordion
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip="">Android NDK</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="https://developers.google.com/cardboard/develop/c/quickstart" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /cardboard/develop/c/quickstart" track-type="bookNav" track-name="click" track-metadata-eventdetail="/cardboard/develop/c/quickstart"><span class="devsite-nav-text" tooltip="">Quickstart</span></a></li><li class="devsite-nav-item"><a href="https://developers.google.com/cardboard/develop/c/vulkan" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /cardboard/develop/c/vulkan" track-type="bookNav" track-name="click" track-metadata-eventdetail="/cardboard/develop/c/vulkan"><span class="devsite-nav-text" tooltip="">Generate Vulkan files</span></a></li></ul></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-accordion
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip="">iOS</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="https://developers.google.com/cardboard/develop/ios/quickstart" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /cardboard/develop/ios/quickstart" track-type="bookNav" track-name="click" track-metadata-eventdetail="/cardboard/develop/ios/quickstart"><span class="devsite-nav-text" tooltip="">Quickstart</span></a></li><li class="devsite-nav-item"><a href="https://developers.google.com/cardboard/develop/ios/protobuf" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /cardboard/develop/ios/protobuf" track-type="bookNav" track-name="click" track-metadata-eventdetail="/cardboard/develop/ios/protobuf"><span class="devsite-nav-text" tooltip="">Generate Protocol buffer files</span></a></li></ul></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-accordion
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip="">Unity</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="https://developers.google.com/cardboard/develop/unity/quickstart" class="devsite-nav-title gc-analytics-event devsite-nav-active" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /cardboard/develop/unity/quickstart" track-type="bookNav" track-name="click" track-metadata-eventdetail="/cardboard/develop/unity/quickstart"><span class="devsite-nav-text" tooltip="">Quickstart</span></a></li></ul></li>
+          </ul>
+        
+        
+          
+    
+  
+    
+  
+    
+  
+        
+        
+          
+    
+  
+        
+      </div>
+    
+  </div>
+</nav>
+        
+      </devsite-book-nav><div class="devsite-book-nav-blur" fixed="" style="--devsite-js-book-nav-scrollbar-width: 0px;"></div><button class="devsite-book-nav-toggle" aria-haspopup="menu" fixed="" aria-label="Hide side navigation" data-title="Hide side navigation" aria-expanded="true"><span class="material-icons devsite-book-nav-toggle-icon"></span></button>
+      <section id="gc-wrapper" style="margin-top: 120px;">
+        <main role="main" class="devsite-main-content" has-book-nav="" has-sidebar="">
+          
+          
+          <div class="devsite-sidebar" fixed="" style="--devsite-js-sidebar-max-height: 1032px; --devsite-js-sidebar-offset: 0;">
+            <div class="devsite-sidebar-content">
+                
+                <devsite-toc class="devsite-nav devsite-toc" role="navigation" aria-label="On this page" depth="2" scrollbars="" visible=""><ul class="devsite-nav-list"><li class="devsite-nav-item devsite-nav-heading devsite-toc-toggle" role="heading" aria-level="2"><span class="devsite-nav-title"><span class="devsite-nav-text">On this page</span></span></li><li class="devsite-nav-item"><a href="#set_up_your_development_environment" class="devsite-nav-title gc-analytics-event devsite-nav-active" data-category="Site-Wide Custom Events" data-action="click" data-label="Right nav" data-value="0" track-type="navigation" track-name="rightNav" track-metadata-position="0" track-metadata-link-destination="#set_up_your_development_environment"><span class="devsite-nav-text" tooltip="">Set up your development environment</span></a></li><li class="devsite-nav-item"><a href="#import_the_sdk_and_create_a_new_project" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Right nav" data-value="1" track-type="navigation" track-name="rightNav" track-metadata-position="1" track-metadata-link-destination="#import_the_sdk_and_create_a_new_project"><span class="devsite-nav-text" tooltip="">Import the SDK and create a new project</span></a></li><li class="devsite-nav-item"><a href="#configuring_hellocardboard_scene" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Right nav" data-value="2" track-type="navigation" track-name="rightNav" track-metadata-position="2" track-metadata-link-destination="#configuring_hellocardboard_scene"><span class="devsite-nav-text" tooltip="">Configuring HelloCardboard scene</span></a></li><li class="devsite-nav-item"><a href="#configuring_android_project_settings" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Right nav" data-value="3" track-type="navigation" track-name="rightNav" track-metadata-position="3" track-metadata-link-destination="#configuring_android_project_settings"><span class="devsite-nav-text" tooltip="">Configuring Android project settings</span></a><ul class="devsite-nav-list"><li class="devsite-nav-item"><a href="#player_settings" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Right nav" data-value="3.0" track-type="navigation" track-name="rightNav" track-metadata-position="3.0" track-metadata-link-destination="#player_settings"><span class="devsite-nav-text" tooltip="">Player Settings</span></a></li><li class="devsite-nav-item"><a href="#build_your_project" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Right nav" data-value="3.1" track-type="navigation" track-name="rightNav" track-metadata-position="3.1" track-metadata-link-destination="#build_your_project"><span class="devsite-nav-text" tooltip="">Build your project</span></a></li></ul></li><li class="devsite-nav-item"><a href="#configuring_ios_project_settings" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Right nav" data-value="4" track-type="navigation" track-name="rightNav" track-metadata-position="4" track-metadata-link-destination="#configuring_ios_project_settings"><span class="devsite-nav-text" tooltip="">Configuring iOS project settings</span></a><ul class="devsite-nav-list"><li class="devsite-nav-item"><a href="#player_settings_2" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Right nav" data-value="4.0" track-type="navigation" track-name="rightNav" track-metadata-position="4.0" track-metadata-link-destination="#player_settings_2"><span class="devsite-nav-text" tooltip="">Player Settings</span></a></li><li class="devsite-nav-item"><a href="#build_your_project_2" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Right nav" data-value="4.1" track-type="navigation" track-name="rightNav" track-metadata-position="4.1" track-metadata-link-destination="#build_your_project_2"><span class="devsite-nav-text" tooltip="">Build your project</span></a></li></ul></li><li class="devsite-nav-item"><a href="#recentering" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Right nav" data-value="5" track-type="navigation" track-name="rightNav" track-metadata-position="5" track-metadata-link-destination="#recentering"><span class="devsite-nav-text" tooltip="">Recentering</span></a></li><li class="devsite-nav-item"><a href="#turning_vr_mode_on_and_off" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Right nav" data-value="6" track-type="navigation" track-name="rightNav" track-metadata-position="6" track-metadata-link-destination="#turning_vr_mode_on_and_off"><span class="devsite-nav-text" tooltip="">Turning VR mode on and off</span></a></li><li class="devsite-nav-item"><a href="#next_steps" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Right nav" data-value="7" track-type="navigation" track-name="rightNav" track-metadata-position="7" track-metadata-link-destination="#next_steps"><span class="devsite-nav-text" tooltip="">Next steps</span></a></li></ul></devsite-toc>
+                <devsite-recommendations-sidebar class="nocontent devsite-nav recommendations-rendered"><div class="devsite-recommendations-sidebar-heading" role="heading" aria-level="2"><a href="#recommendations-link" class="devsite-nav-title devsite-recommendations-sidebar-heading-link" data-category="Site-Wide Custom Events" data-label="devsite-recommendation side-nav title" data-action="click" data-tooltip="See content recommendations"><svg class="devsite-recommendations-sidebar-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.5,8.5L10,3L7.5,8.5L2,11l5.5,2.5L10,19l2.5-5.5L18,11L12.5,8.5z M18,13l-1.25,2.75L14,17l2.75,1.25L18,21l1.25-2.75 L22,17l-2.75-1.25L18,13z"></path></svg><span class="devsite-nav-text devsite-nav-title">Recommended for you</span></a></div><ul class="devsite-nav-list"><li role="option" class="devsite-nav-item"><a href="https://developers.google.com/vr/develop/unity/get-started-android?rec=CkBodHRwczovL2RldmVsb3BlcnMuZ29vZ2xlLmNvbS9jYXJkYm9hcmQvZGV2ZWxvcC91bml0eS9xdWlja3N0YXJ0EAEYDSABKAgwGToIMzkzMDA0Nzc" class="devsite-nav-title devsite-recommendations-sidebar-title" data-category="Site-Wide Custom Events" data-label="devsite-recommendation side-nav link" data-action="click"><span class="devsite-nav-text" tooltip="">Quickstart for Google VR SDK for Unity with Android</span></a><div class="significatio-card-meta">Updated <span class="significatio-date" date="1576182510">12. Dez. 2019</span></div></li><li role="option" class="devsite-nav-item"><a href="https://developers.google.com/cardboard/develop/c/quickstart?rec=CkBodHRwczovL2RldmVsb3BlcnMuZ29vZ2xlLmNvbS9jYXJkYm9hcmQvZGV2ZWxvcC91bml0eS9xdWlja3N0YXJ0EAIYDSABKAYwHDoIMzkzMDA0Nzc" class="devsite-nav-title devsite-recommendations-sidebar-title" data-category="Site-Wide Custom Events" data-label="devsite-recommendation side-nav link" data-action="click"><span class="devsite-nav-text" tooltip="">Quickstart for Google Cardboard for Android NDK</span></a><div class="significatio-card-meta">Updated <span class="significatio-date" date="1682528353">26. Apr. 2023</span></div></li><li role="option" class="devsite-nav-item"><a href="https://developers.google.com/cardboard/develop/branding-guidelines?rec=CkBodHRwczovL2RldmVsb3BlcnMuZ29vZ2xlLmNvbS9jYXJkYm9hcmQvZGV2ZWxvcC91bml0eS9xdWlja3N0YXJ0EAMYDSABKAMwHzoIMzkzMDA0Nzc" class="devsite-nav-title devsite-recommendations-sidebar-title" data-category="Site-Wide Custom Events" data-label="devsite-recommendation side-nav link" data-action="click"><span class="devsite-nav-text" tooltip="">Cardboard Branding Guidelines</span></a><div class="significatio-card-meta">Updated <span class="significatio-date" date="1589996171">20. Mai 2020</span></div></li></ul></devsite-recommendations-sidebar>
+            </div>
+          </div>
+          
+          <devsite-content>
+            
+              
+
+
+
+
+
+
+
+
+
+
+
+<article class="devsite-article" has-bookmark="">
+  
+  
+  
+
+  <div class="devsite-article-meta nocontent" role="navigation">
+    
+    
+    <ul class="devsite-breadcrumb-list" aria-label="Breadcrumb">
+  
+  <li class="devsite-breadcrumb-item
+             ">
+    
+    
+    
+      
+  <a href="https://developers.google.com/" class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="1" track-type="globalNav" track-name="breadcrumb" track-metadata-position="1" track-metadata-eventdetail="">
+    
+        Home
+      
+  </a>
+  
+    
+  </li>
+  
+  <li class="devsite-breadcrumb-item
+             ">
+    
+      
+      <div class="devsite-breadcrumb-guillemet material-icons" aria-hidden="true"></div>
+    
+    
+    
+      
+  <a href="https://developers.google.com/products" class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="2" track-type="globalNav" track-name="breadcrumb" track-metadata-position="2" track-metadata-eventdetail="">
+    
+        Products
+      
+  </a>
+  
+    
+  </li>
+  
+  <li class="devsite-breadcrumb-item
+             ">
+    
+      
+      <div class="devsite-breadcrumb-guillemet material-icons" aria-hidden="true"></div>
+    
+    
+    
+      
+  <a href="https://developers.google.com/cardboard" class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="3" track-type="globalNav" track-name="breadcrumb" track-metadata-position="3" track-metadata-eventdetail="Cardboard">
+    
+        Cardboard
+      
+  </a>
+  
+    
+  </li>
+  
+  <li class="devsite-breadcrumb-item
+             ">
+    
+      
+      <div class="devsite-breadcrumb-guillemet material-icons" aria-hidden="true"></div>
+    
+    
+    
+      
+  <a href="https://developers.google.com/cardboard/develop" class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="4" track-type="globalNav" track-name="breadcrumb" track-metadata-position="4" track-metadata-eventdetail="">
+    
+        Develop
+      
+  </a>
+  
+    
+  </li>
+  
+</ul>
+    
+      
+    <devsite-thumb-rating position="header"><div class="devsite-thumb-rating" role="form" aria-labelledby="devsite-thumb-label-header" tabindex="0"><div class="devsite-thumb-label" id="devsite-thumb-label-header">Was this helpful?</div><div class="devsite-thumbs"><button class="devsite-thumb devsite-thumb-up" data-title="Helpful" aria-label="Helpful"><svg class="devsite-thumb-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21,7h-6.31l0.95-4.57l0.03-0.32c0-0.41-0.17-0.79-0.44-1.06L14.17,0c0,0-7.09,6.85-7.17,7H2v13h16 c0.83,0,1.54-0.5,1.84-1.22l3.02-7.05C22.95,11.5,23,11.26,23,11V9C23,7.9,22.1,7,21,7z M7,18H4V9h3V18z M21,11l-3,7H9V8l4.34-4.34 L12,9h9V11z"></path></svg></button><button class="devsite-thumb devsite-thumb-down" data-title="Not helpful" aria-label="Not helpful"><svg class="devsite-thumb-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3,17h6.31l-0.95,4.57l-0.03,0.32c0,0.41,0.17,0.79,0.44,1.06L9.83,24c0,0,7.09-6.85,7.17-7h5V4H6 C5.17,4,4.46,4.5,4.16,5.22l-3.02,7.05C1.05,12.5,1,12.74,1,13v2C1,16.1,1.9,17,3,17z M17,6h3v9h-3V6z M3,13l3-7h9v10l-4.34,4.34 L12,15H3V13z"></path></svg></button></div></div></devsite-thumb-rating>
+  
+    
+  </div>
+  <h1 class="devsite-page-title">Quickstart for Google Cardboard for Unity</h1><devsite-feature-tooltip ack-key="AckCollectionsBookmarkTooltipDismiss" analytics-category="Site-Wide Custom Events" analytics-action-show="Callout Profile displayed" analytics-action-close="Callout Profile dismissed" analytics-label="Create Collection Callout" class="devsite-page-bookmark-tooltip nocontent inline-block" dismiss-button="true" id="devsite-collections-dropdown" dismiss-button-text="Dismiss" close-button-text="Got it" ready="" current-step="0" style="--devsite-popout-offset-x: 32px;">
+
+        
+        <devsite-bookmark class="show"><devsite-dropdown-list ellipsis="" checkboxes="" fetchingitems="true" writable="" additemtext="New Collection" ready="" style="--devsite-popout-offset-x: 0px;"><span class="material-icons bookmark-icon" slot="toggle">bookmark_border</span></devsite-dropdown-list></devsite-bookmark>
+
+        <span slot="popout-heading">
+          
+          Stay organized with collections
+        </span>
+        <span slot="popout-contents">
+          
+          Save and categorize content based on your preferences.
+        </span>
+      </devsite-feature-tooltip>
+    
+  
+
+  <devsite-toc class="devsite-nav devsite-toc-embedded" depth="2" devsite-toc-embedded="" expandable="" visible=""><ul class="devsite-nav-list"><li class="devsite-nav-item devsite-nav-heading devsite-toc-toggle" role="heading" aria-level="2"><span class="devsite-nav-title"><span class="devsite-nav-text">On this page</span></span><button type="button" title="Expand/collapse contents" class="devsite-nav-show-all button-transparent material-icons"></button></li><li class="devsite-nav-item" visible=""><a href="#set_up_your_development_environment" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="0" track-type="navigation" track-name="embeddedNav" track-metadata-position="0" track-metadata-link-destination="#set_up_your_development_environment"><span class="devsite-nav-text" tooltip="">Set up your development environment</span></a></li><li class="devsite-nav-item" visible=""><a href="#import_the_sdk_and_create_a_new_project" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="1" track-type="navigation" track-name="embeddedNav" track-metadata-position="1" track-metadata-link-destination="#import_the_sdk_and_create_a_new_project"><span class="devsite-nav-text" tooltip="">Import the SDK and create a new project</span></a></li><li class="devsite-nav-item" visible=""><a href="#configuring_hellocardboard_scene" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="2" track-type="navigation" track-name="embeddedNav" track-metadata-position="2" track-metadata-link-destination="#configuring_hellocardboard_scene"><span class="devsite-nav-text" tooltip="">Configuring HelloCardboard scene</span></a></li><li class="devsite-nav-item" visible=""><a href="#configuring_android_project_settings" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="3" track-type="navigation" track-name="embeddedNav" track-metadata-position="3" track-metadata-link-destination="#configuring_android_project_settings"><span class="devsite-nav-text" tooltip="">Configuring Android project settings</span></a><ul class="devsite-nav-list"><li class="devsite-nav-item" visible=""><a href="#player_settings" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="3.0" track-type="navigation" track-name="embeddedNav" track-metadata-position="3.0" track-metadata-link-destination="#player_settings"><span class="devsite-nav-text" tooltip="">Player Settings</span></a></li><li class="devsite-nav-item"><a href="#build_your_project" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="3.1" track-type="navigation" track-name="embeddedNav" track-metadata-position="3.1" track-metadata-link-destination="#build_your_project"><span class="devsite-nav-text" tooltip="">Build your project</span></a></li></ul></li><li class="devsite-nav-item"><a href="#configuring_ios_project_settings" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="4" track-type="navigation" track-name="embeddedNav" track-metadata-position="4" track-metadata-link-destination="#configuring_ios_project_settings"><span class="devsite-nav-text" tooltip="">Configuring iOS project settings</span></a><ul class="devsite-nav-list"><li class="devsite-nav-item"><a href="#player_settings_2" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="4.0" track-type="navigation" track-name="embeddedNav" track-metadata-position="4.0" track-metadata-link-destination="#player_settings_2"><span class="devsite-nav-text" tooltip="">Player Settings</span></a></li><li class="devsite-nav-item"><a href="#build_your_project_2" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="4.1" track-type="navigation" track-name="embeddedNav" track-metadata-position="4.1" track-metadata-link-destination="#build_your_project_2"><span class="devsite-nav-text" tooltip="">Build your project</span></a></li></ul></li><li class="devsite-nav-item"><a href="#recentering" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="5" track-type="navigation" track-name="embeddedNav" track-metadata-position="5" track-metadata-link-destination="#recentering"><span class="devsite-nav-text" tooltip="">Recentering</span></a></li><li class="devsite-nav-item"><a href="#turning_vr_mode_on_and_off" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="6" track-type="navigation" track-name="embeddedNav" track-metadata-position="6" track-metadata-link-destination="#turning_vr_mode_on_and_off"><span class="devsite-nav-text" tooltip="">Turning VR mode on and off</span></a></li><li class="devsite-nav-item"><a href="#next_steps" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="7" track-type="navigation" track-name="embeddedNav" track-metadata-position="7" track-metadata-link-destination="#next_steps"><span class="devsite-nav-text" tooltip="">Next steps</span></a></li><li class="devsite-toc-toggle"><button type="button" class="button-flat devsite-nav-more-items material-icons" track-type="navigation" track-name="embeddedNavExpand" title="Expand/collapse contents"></button></li></ul></devsite-toc>
+  
+    
+    <devsite-recommendations-dropdown class="nocontent"></devsite-recommendations-dropdown>
+    
+  
+
+  
+
+
+
+
+
+
+<div class="devsite-article-body clearfix
+  ">
+
+  
+
+  
+    
+
+
+<p>This guide shows you how to use the  <a href="https://github.com/googlevr/cardboard-xr-plugin">Google Cardboard XR Plugin for Unity</a>
+for Unity to create your own Virtual Reality (VR) experiences.</p>
+<aside class="note"><strong>Note:</strong><span> Make sure to review the <a href="https://developers.google.com/cardboard/develop/branding-guidelines">Cardboard branding guidelines</a>
+before distributing your app to a wider audience.</span></aside>
+<p>You can use the Cardboard SDK to turn a smartphone into a VR platform. A smartphone
+can display 3D scenes with stereoscopic rendering, track and react to head movements, and
+interact with apps by detecting when the user presses the viewer button.</p>
+
+<p>To get started, you'll use <strong>HelloCardboard</strong>, a demo game that demonstrates the core
+features of the Cardboard SDK. In the game, users look around a virtual world to find and
+collect objects. It shows you how to:</p>
+
+<ul>
+<li>Set up your development environment</li>
+<li>Download and build the demo app</li>
+<li>Scan the QR code of a Cardboard viewer to save its parameters</li>
+<li>Track the user’s head movements</li>
+<li>Render stereoscopic images by setting the correct distortion for each eye</li>
+<li>Turn VR mode on and off</li>
+</ul>
+
+<h2 id="set_up_your_development_environment" data-text="Set up your development environment" role="presentation"><span class="devsite-heading" role="heading" aria-level="2">Set up your development environment</span><button type="button" class="devsite-heading-link button-flat material-icons" aria-label="Copy link to this section: Set up your development environment" data-title="Copy link to this section: Set up your development environment" data-id="set_up_your_development_environment"></button></h2>
+
+<p>Software requirements:</p>
+
+<ul>
+<li><a href="https://unity3d.com/get-unity/download/archive">Unity 2020.3.36f1</a> or later
+<ul>
+<li>Make sure to include Android and iOS Build Support during installation.</li>
+</ul></li>
+<li><a href="https://git-scm.com/">Git</a> must be installed and the <code translate="no" dir="ltr">git</code> executable must
+be on the <code translate="no" dir="ltr">PATH</code> environment variable. See
+<a href="https://docs.unity3d.com/Manual/upm-git.html">Unity's package manager git support</a>
+docs for more details.</li>
+</ul>
+
+<h2 id="import_the_sdk_and_create_a_new_project" data-text="Import the SDK and create a new project">Import the SDK and create a new project</h2>
+
+<p>Follow these steps to import the Unity SDK and create a new project.</p>
+
+<ol>
+<li>Open Unity and create a new <strong>3D</strong> project.</li>
+<li>In Unity, go to <strong>Window</strong> &gt; <strong>Package Manager</strong>.</li>
+<li>Click <strong>+</strong> and select <strong>Add package from git URL</strong>.</li>
+<li>Paste <code translate="no" dir="ltr">https://github.com/googlevr/cardboard-xr-plugin.git</code> into the text entry field. <br>
+The package should be added to the installed packages.</li>
+<li>Navigate to the <strong>Google Cardboard XR Plugin for Unity</strong> package. In the <strong>Samples</strong>
+section, choose <strong>Import into Project</strong>. <br>
+The sample assets should be loaded into
+    <code translate="no" dir="ltr">Assets/Samples/Google Cardboard/&lt;version&gt;/Hello Cardboard</code>.</li>
+</ol>
+<aside class="note"><strong>Note:</strong><span> <code translate="no" dir="ltr">&lt;version&gt;</code> is the <code translate="no" dir="ltr">X.Y.Z</code> semantic version number of the released package (for example, <code translate="no" dir="ltr">1.1.0</code>).</span></aside>
+<h2 id="configuring_hellocardboard_scene" data-text="Configuring HelloCardboard scene">Configuring HelloCardboard scene</h2>
+
+<ol>
+<li>Navigate to <code translate="no" dir="ltr">Assets/Samples/Google Cardboard/&lt;version&gt;/Hello Cardboard/Scenes</code>,
+select <strong>Add Open Scenes</strong>, and choose <strong>HelloCardboard</strong> to open the sample scene.</li>
+<li>Open the <strong>Layers</strong> menu and select <strong>Edit Layers...</strong>.</li>
+<li>Define a new layer called "Interactive".</li>
+<li>Click on the <strong>Treasure</strong> GameObject to open the 
+Inspector window. Set its layer to be "Interactive". If a pop up window 
+appears asking if you want to set layer to Interactive for all child 
+objects as well, click on "Yes, change children".</li>
+<li>Click on the <strong>Player &gt; Camera &gt; CardboardReticlePointer</strong> GameObject to open the Inspector window. In the "Carboard reticle pointer" script, select "Interactive" as the <strong>Reticle Interaction Layer Mask</strong>.</li>
+</ol>
+
+<h2 id="configuring_android_project_settings" data-text="Configuring Android project settings">Configuring Android project settings</h2>
+
+<p>Navigate to <strong>File</strong> &gt; <strong>Build Settings</strong>.</p>
+
+<ol>
+<li>Select <strong>Android</strong> and choose <strong>Switch Platform</strong>.</li>
+<li>Select <strong>Add Open Scenes</strong> and choose <strong>HelloCardboard</strong>.</li>
+</ol>
+
+<h3 id="player_settings" data-text="Player Settings">Player Settings</h3>
+
+<h4 id="resolution_and_presentation" data-text="Resolution and Presentation">Resolution and Presentation</h4>
+
+<p>Navigate to <strong>Project Settings</strong> &gt; <strong>Player</strong> &gt; <strong>Resolution and Presentation</strong>.</p>
+
+<ol>
+<li>Set the <strong>Default Orientation</strong> to <strong>Landscape Left</strong> or <strong>Landscape Right</strong>.</li>
+<li>Disable <strong>Optimized Frame Pacing</strong>.</li>
+</ol>
+<aside class="note"><strong>Note:</strong><span> While supported by the Cardboard XR plugin, the <strong>Portrait</strong> and <strong>Portrait Upside Down</strong> orientations may not provide enough room for eye rendering on devices.</span></aside>
+<h4 id="other_settings" data-text="Other Settings">Other Settings</h4>
+
+<p>Navigate to <strong>Project Settings</strong> &gt; <strong>Player</strong> &gt; <strong>Other Settings</strong>.</p>
+
+<ol>
+<li>Choose <code translate="no" dir="ltr">OpenGLES2</code>, <code translate="no" dir="ltr">OpenGLES3</code>, or <code translate="no" dir="ltr">Vulkan</code>, or any combination of them in <strong>Graphics APIs</strong>.</li>
+<li>Select <code translate="no" dir="ltr">Android 7.0 'Nougat' (API level 24)</code> or higher in <strong>Minimum API Level</strong>.</li>
+<li>Select <code translate="no" dir="ltr">API level 31</code> or higher in <strong>Target API Level</strong>.</li>
+<li>Select <code translate="no" dir="ltr">IL2CPP</code> in <strong>Scripting Backend</strong>.</li>
+<li>Select desired architectures by choosing <code translate="no" dir="ltr">ARMv7</code>, <code translate="no" dir="ltr">ARM64</code>, or both in <strong>Target Architectures</strong>.</li>
+<li>Select <code translate="no" dir="ltr">Require</code> in <strong>Internet Access</strong>.</li>
+<li>Specify your company domain under <strong>Package Name</strong>.</li>
+<li>If <code translate="no" dir="ltr">Vulkan</code> was selected as <strong>Graphics API</strong>:
+<ul>
+<li>Uncheck <strong>Apply display rotation during rendering</strong> checkbox in <strong>Vulkan Settings</strong>.</li>
+<li>If the Unity version is 2021.2 or above, Select <code translate="no" dir="ltr">ETC2</code> in <strong>Texture compression format</strong>.</li>
+</ul></li>
+</ol>
+<aside class="note"><strong>Note:</strong><span> It's possible to use a lower minimum API level by changing rendering API compatibility. For more information, see <a href="https://github.com/googlevr/cardboard/blob/e7a1c22e456ff67116dd016c760dcc469bfa973e/sdk/build.gradle#L11-L18">the SDK’s <code translate="no" dir="ltr">build.gradle</code></a>.</span></aside><aside class="note"><strong>Note:</strong><span> In case you are experiencing issues when selecting Vulkan as the graphics API, check the <code translate="no" dir="ltr">Development Build</code> box in <code translate="no" dir="ltr">Build Settings</code> and analyze the runtime logs looking for driver compatibility errors.</span></aside>
+<h4 id="publishing_settings" data-text="Publishing Settings">Publishing Settings</h4>
+
+<p>Navigate to <strong>Project Settings</strong> &gt; <strong>Player</strong> &gt; <strong>Publishing Settings</strong>.</p>
+
+<ol>
+<li>In the <strong>Build</strong> section, select <code translate="no" dir="ltr">Custom Main Gradle Template</code> and <code translate="no" dir="ltr">Custom
+Gradle Properties Template</code>.</li>
+<li><p>Add the following lines to the dependencies section of
+<code translate="no" dir="ltr">Assets/Plugins/Android/mainTemplate.gradle</code>:</p>
+<devsite-code data-copy-event-label=""><pre class="" translate="no" dir="ltr" is-upgraded=""><code dir="ltr"><span class="pln">&nbsp; implementation </span><span class="str">'androidx.appcompat:appcompat:1.4.2'</span><span class="pln"><br>&nbsp; implementation </span><span class="str">'com.google.android.gms:play-services-vision:20.1.3'</span><span class="pln"><br>&nbsp; implementation </span><span class="str">'com.google.android.material:material:1.6.1'</span><span class="pln"><br>&nbsp; implementation </span><span class="str">'com.google.protobuf:protobuf-javalite:3.19.4'</span><span class="pln"><br></span></code></pre></devsite-code></li>
+<li><p>Add the following lines to
+<code translate="no" dir="ltr">Assets/Plugins/Android/gradleTemplate.properties</code>:</p>
+<devsite-code data-copy-event-label=""><pre class="" translate="no" dir="ltr" is-upgraded=""><code dir="ltr"><span class="pln">&nbsp; android</span><span class="pun">.</span><span class="pln">enableJetifier</span><span class="pun">=</span><span class="kwd">true</span><span class="pln"><br>&nbsp; android</span><span class="pun">.</span><span class="pln">useAndroidX</span><span class="pun">=</span><span class="kwd">true</span><span class="pln"><br></span></code></pre></devsite-code></li>
+</ol>
+<aside class="note"><strong>Note:</strong><span> The dependencies needed
+ may change between versions. If you want to use a version different 
+from the most recent release, take a look at the history of the 
+dependencies section in <a href="https://github.com/googlevr/cardboard/blob/master/sdk/build.gradle">sdk/build.gradle</a> of the Cardboard SDK repository.</span></aside>
+<h4 id="xr_plug-in_management_settings" data-text="XR Plug-in Management Settings">XR Plug-in Management Settings</h4>
+
+<p>Navigate to <strong>Project Settings</strong> &gt; <strong>XR Plug-in Management</strong>.</p>
+
+<ol>
+<li>Select <code translate="no" dir="ltr">Cardboard XR Plugin</code> under <strong>Plug-in Providers</strong>.</li>
+</ol>
+
+<h3 id="build_your_project" data-text="Build your project">Build your project</h3>
+
+<p>Navigate to <strong>File</strong> &gt; <strong>Build Settings</strong>.</p>
+
+<ol>
+<li>Select <strong>Build</strong>, or choose a device and select <strong>Build and Run</strong>.</li>
+</ol>
+
+<h2 id="configuring_ios_project_settings" data-text="Configuring iOS project settings">Configuring iOS project settings</h2>
+
+<p>Navigate to <strong>File</strong> &gt; <strong>Build Settings</strong>.</p>
+
+<ol>
+<li>Select <strong>iOS</strong> and choose <strong>Switch Platform</strong>.</li>
+<li>Select <strong>Add Open Scenes</strong> and choose <strong>HelloCardboard</strong>.</li>
+</ol>
+
+<h3 id="player_settings_2" data-text="Player Settings">Player Settings</h3>
+
+<h4 id="resolution_and_presentation_2" data-text="Resolution and Presentation">Resolution and Presentation</h4>
+
+<p>Navigate to <strong>Project Settings</strong> &gt; <strong>Player</strong> &gt; <strong>Resolution and Presentation</strong>.</p>
+
+<ol>
+<li>Set the <strong>Default Orientation</strong> to <strong>Landscape Left</strong> or <strong>Landscape Right</strong>.</li>
+</ol>
+<aside class="note"><strong>Note:</strong><span> While supported by the Cardboard XR plugin, the <strong>Portrait</strong> and <strong>Portrait Upside Down</strong> orientations may not provide enough room for eye rendering on devices.</span></aside>
+<h4 id="other_settings_2" data-text="Other Settings">Other Settings</h4>
+
+<p>Navigate to <strong>Project Settings</strong> &gt; <strong>Player</strong> &gt; <strong>Other Settings</strong>.</p>
+
+<ol>
+<li>In <strong>Camera Usage Description</strong>, write <code translate="no" dir="ltr">Cardboard SDK requires camera permission to read the QR code (required to get the encoded device parameters).</code>.</li>
+<li>In <strong>Target minimum iOS Version</strong>, write <code translate="no" dir="ltr">12.0</code>.</li>
+<li>Specify your company domain under <strong>Package Name</strong>.</li>
+</ol>
+<aside class="note"><strong>Note:</strong><span> If using an iPhone X, select the <strong>Hide home button on iPhone X</strong> option.</span></aside>
+<h4 id="xr_plug-in_management_settings_2" data-text="XR Plug-in Management Settings">XR Plug-in Management Settings</h4>
+
+<p>Navigate to <strong>Project Settings</strong> &gt; <strong>XR Plug-in Management</strong>.</p>
+
+<ol>
+<li>Select <code translate="no" dir="ltr">Cardboard XR Plugin</code> under <strong>Plug-in Providers</strong>.</li>
+</ol>
+
+<h3 id="build_your_project_2" data-text="Build your project">Build your project</h3>
+
+<p>Navigate to <strong>File</strong> &gt; <strong>Build Settings</strong>.</p>
+
+<ol>
+<li>Select <strong>Build</strong> or <strong>Build and Run</strong>.</li>
+</ol>
+
+<h2 id="recentering" data-text="Recentering">Recentering</h2>
+
+<p>The <a href="https://github.com/googlevr/cardboard">Cardboard SDK</a> allows you to
+recenter the head tracker using
+<a href="https://github.com/googlevr/cardboard-xr-plugin/blob/master/Runtime/Api.cs"><code translate="no" dir="ltr">Recenter()</code></a>.</p>
+
+<p>Follow these steps to try it out using the sample application:</p>
+
+<ol>
+<li>Move the device to the position you want to recenter (use as new looking forward head pose).</li>
+<li>Hold the trigger of your Cardboard device active for at least three seconds.</li>
+<li>Release the trigger.</li>
+<li>The initial pose is now in the direction the camera is pointing.</li>
+</ol>
+
+<h2 id="turning_vr_mode_on_and_off" data-text="Turning VR mode on and off">Turning VR mode on and off</h2>
+
+<p>The <a href="https://docs.unity3d.com/Manual/com.unity.xr.management.html">Unity XR Plugin Management API</a>
+lets you turn VR mode on or off for the <a href="https://github.com/googlevr/cardboard-xr-plugin">Google Cardboard XR Plugin for Unity</a>.
+End-user documentation and usage examples are available in Unity's <a href="https://docs.unity3d.com/Packages/com.unity.xr.management@3.2/manual/index.html" class="external">End-user documentation</a>.</p>
+
+<p>The <strong>VrMode</strong> scene in HelloCardboard sample shows a basic usage of the aformentioned
+API. In this scene, VR mode can be turned off by tapping <strong>exit</strong> <img src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/quantum_ic_close_black_18.png" alt="">, and can
+be turned on again just by tapping anywhere on the screen. Check <a href="https://github.com/googlevr/cardboard-xr-plugin/blob/master/Samples%7E/hellocardboard-unity/Scripts/VrModeController.cs">VrModeController.cs</a> for details about how this is performed.</p>
+
+<h2 id="next_steps" data-text="Next steps">Next steps</h2>
+
+<ul>
+<li>Review the <a href="https://developers.google.com/cardboard/develop/branding-guidelines">Cardboard branding guidelines</a>.</li>
+</ul>
+
+  
+
+  
+</div>
+
+  
+
+  
+    
+      <devsite-recommendations display="in-page" yield="" hidden="">
+      </devsite-recommendations>
+    
+    
+      
+    <devsite-thumb-rating position="footer"><div class="devsite-thumb-rating" role="form" aria-labelledby="devsite-thumb-label-footer" tabindex="0"><div class="devsite-thumb-label" id="devsite-thumb-label-footer">Was this helpful?</div><div class="devsite-thumbs"><button class="devsite-thumb devsite-thumb-up" data-title="Helpful" aria-label="Helpful"><svg class="devsite-thumb-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21,7h-6.31l0.95-4.57l0.03-0.32c0-0.41-0.17-0.79-0.44-1.06L14.17,0c0,0-7.09,6.85-7.17,7H2v13h16 c0.83,0,1.54-0.5,1.84-1.22l3.02-7.05C22.95,11.5,23,11.26,23,11V9C23,7.9,22.1,7,21,7z M7,18H4V9h3V18z M21,11l-3,7H9V8l4.34-4.34 L12,9h9V11z"></path></svg></button><button class="devsite-thumb devsite-thumb-down" data-title="Not helpful" aria-label="Not helpful"><svg class="devsite-thumb-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3,17h6.31l-0.95,4.57l-0.03,0.32c0,0.41,0.17,0.79,0.44,1.06L9.83,24c0,0,7.09-6.85,7.17-7h5V4H6 C5.17,4,4.46,4.5,4.16,5.22l-3.02,7.05C1.05,12.5,1,12.74,1,13v2C1,16.1,1.9,17,3,17z M17,6h3v9h-3V6z M3,13l3-7h9v10l-4.34,4.34 L12,15H3V13z"></path></svg></button></div></div></devsite-thumb-rating>
+  
+       
+    
+    
+      <devsite-recommendations id="recommendations-link" yield=""><div class="significatio-overview"><h2 class="significatio-heading no-link">Recommended for you</h2><div class="info-container"><button type="button" class="button-flat info-button significatio-info-container" id="significatio-info-button" aria-label="About recommendations" data-title="About recommendations"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="significatio-icon-info"><path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path></svg></button></div><div class="significatio-buttons"></div></div><div class="significatio-body"><div class="significatio-recommendations"><div class="significatio-card" show=""><h3 class="significatio-card-heading no-link"><a href="https://developers.google.com/vr/develop/unity/get-started-android?rec=CkBodHRwczovL2RldmVsb3BlcnMuZ29vZ2xlLmNvbS9jYXJkYm9hcmQvZGV2ZWxvcC91bml0eS9xdWlja3N0YXJ0EAEYDSABKAgwGToIMzkzMDA0Nzc" data-category="Site-Wide Custom Events" data-label="devsite-recommendation card link" data-action="click" track-type="recommendations" track-name="cardClick" track-metadata-eventdetail="https://developers.google.com/vr/develop/unity/get-started-android">Quickstart for Google VR SDK for Unity with Android</a></h3><p class="significatio-card-description">This
+ guide shows you how to set up Google VR development with Unity and 
+build a
+demo Daydream or Cardboard app for Android. Hardware requirements: 
+Daydream: You'll need a Daydream-ready phone and a Daydream View. 
+Cardboard: You'll need an Android</p><div class="significatio-card-meta">Updated <span class="significatio-date" date="1576182510">12. Dez. 2019</span></div></div><div class="significatio-card" show=""><h3 class="significatio-card-heading no-link"><a href="https://developers.google.com/cardboard/develop/c/quickstart?rec=CkBodHRwczovL2RldmVsb3BlcnMuZ29vZ2xlLmNvbS9jYXJkYm9hcmQvZGV2ZWxvcC91bml0eS9xdWlja3N0YXJ0EAIYDSABKAYwHDoIMzkzMDA0Nzc" data-category="Site-Wide Custom Events" data-label="devsite-recommendation card link" data-action="click" track-type="recommendations" track-name="cardClick" track-metadata-eventdetail="https://developers.google.com/cardboard/develop/c/quickstart">Quickstart for Google Cardboard for Android NDK</a></h3><p class="significatio-card-description">This
+ guide shows you how to use the Cardboard SDK for Android to create your
+ own Virtual Reality (VR) experiences. You can use the Cardboard SDK to 
+turn a smartphone into a VR platform. A smartphone
+can display 3D scenes with stereoscopic rendering,</p><div class="significatio-card-meta">Updated <span class="significatio-date" date="1682528353">26. Apr. 2023</span></div></div><div class="significatio-card" show=""><h3 class="significatio-card-heading no-link"><a href="https://developers.google.com/cardboard/develop/branding-guidelines?rec=CkBodHRwczovL2RldmVsb3BlcnMuZ29vZ2xlLmNvbS9jYXJkYm9hcmQvZGV2ZWxvcC91bml0eS9xdWlja3N0YXJ0EAMYDSABKAMwHzoIMzkzMDA0Nzc" data-category="Site-Wide Custom Events" data-label="devsite-recommendation card link" data-action="click" track-type="recommendations" track-name="cardClick" track-metadata-eventdetail="https://developers.google.com/cardboard/develop/branding-guidelines">Cardboard Branding Guidelines</a></h3><p class="significatio-card-description">The "Google Cardboard" name is a trademark owned by Google and is not included
+within the assets licensed under the Apache License 2.0. Cardboard is a free
+and open-source SDK that developers can use to create apps that are compatible
+with the Google</p><div class="significatio-card-meta">Updated <span class="significatio-date" date="1589996171">20. Mai 2020</span></div></div></div><div class="significatio-loading"><devsite-spinner size="64" style="height: 64px; width: 64px;"></devsite-spinner></div></div></devsite-recommendations>
+    
+  
+
+  
+  
+</article>
+
+
+<devsite-content-footer class="nocontent">
+  <p>All rights reserved. Java is a registered trademark of Oracle and/or its affiliates.</p>
+  <p>Last updated 2023-03-30 UTC.</p>
+</devsite-content-footer>
+
+
+<devsite-notification>
+</devsite-notification>
+
+
+  
+<div class="devsite-content-data">
+  <template class="devsite-thumb-rating-down-categories">
+  [{
+      "type": "thumb-down",
+      "id": "missingTheInformationINeed",
+      "label":"Missing the information I need"
+    },{
+      "type": "thumb-down",
+      "id": "tooComplicatedTooManySteps",
+      "label":"Too complicated / too many steps"
+    },{
+      "type": "thumb-down",
+      "id": "outOfDate",
+      "label":"Out of date"
+    },{
+      "type": "thumb-down",
+      "id": "samplesCodeIssue",
+      "label":"Samples / code issue"
+    },{
+      "type": "thumb-down",
+      "id": "otherDown",
+      "label":"Other"
+    }]
+  </template>
+  <template class="devsite-thumb-rating-up-categories">
+  [{
+      "type": "thumb-up",
+      "id": "easyToUnderstand",
+      "label":"Easy to understand"
+    },{
+      "type": "thumb-up",
+      "id": "solvedMyProblem",
+      "label":"Solved my problem"
+    },{
+      "type": "thumb-up",
+      "id": "otherUp",
+      "label":"Other"
+    }]
+  </template>
+  
+</div>
+            
+          </devsite-content>
+        </main>
+        <devsite-footer-promos class="devsite-footer">
+          
+            
+          
+        </devsite-footer-promos>
+        <devsite-footer-linkboxes class="devsite-footer">
+          
+            
+<nav class="devsite-footer-linkboxes nocontent" aria-label="Footer links">
+  
+  <ul class="devsite-footer-linkboxes-list">
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Connect</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://googledevelopers.blogspot.com/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)">
+            
+          
+            Blog
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://www.instagram.com/googlefordevs/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 2)">
+            
+          
+            Instagram
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://www.linkedin.com/showcase/googledevelopers/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 3)">
+            
+          
+            LinkedIn
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://twitter.com/googledevs" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 4)">
+            
+          
+            Twitter
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://www.youtube.com/user/GoogleDevelopers" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 5)">
+            
+              
+              
+            
+          
+            YouTube
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Programs</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://www.womentechmakers.com/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)">
+            
+          
+            Women Techmakers
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://developers.google.com/community/gdg" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 2)">
+            
+          
+            Google Developer Groups
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://developers.google.com/community/experts" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 3)">
+            
+          
+            Google Developer Experts
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://developers.google.com/community/accelerators" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 4)">
+            
+          
+            Accelerators
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://developers.google.com/community/gdsc" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 5)">
+            
+              
+              
+            
+          
+            Google Developer Student Clubs
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Developer consoles</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://console.developers.google.com/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)">
+            
+          
+            Google API Console
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://console.cloud.google.com/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 2)">
+            
+          
+            Google Cloud Platform Console
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://play.google.com/apps/publish" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 3)">
+            
+          
+            Google Play Console
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://console.firebase.google.com/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 4)">
+            
+          
+            Firebase Console
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://console.actions.google.com/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 5)">
+            
+          
+            Actions on Google Console
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://cast.google.com/publish" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 6)">
+            
+          
+            Cast SDK Developer Console
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://chrome.google.com/webstore/developer/dashboard" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 7)">
+            
+              
+              
+            
+          
+            Chrome Web Store Dashboard
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+  
+</nav>
+          
+        </devsite-footer-linkboxes>
+        <devsite-footer-utility class="devsite-footer">
+          
+            
+
+<div class="devsite-footer-utility nocontent">
+  
+  
+  <nav class="devsite-footer-sites" aria-label="Other Google Developers websites">
+    <a href="https://developers.google.com/" class="devsite-footer-sites-logo-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Google Developers Link">
+      <picture>
+        <source srcset="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/lockup-google-for-developers-dark-theme.svg 1x" media="(prefers-color-scheme: none)" class="devsite-dark-theme" loading="lazy" alt="Google Developers">
+        <img class="devsite-footer-sites-logo" src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/lockup-google-for-developers.svg" loading="lazy" alt="Google Developers">
+      </picture>
+    </a>
+    <ul class="devsite-footer-sites-list">
+      
+      <li class="devsite-footer-sites-item">
+        <a href="https://developer.android.com/" class="devsite-footer-sites-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Android Link">
+          Android
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="https://developer.chrome.com/home" class="devsite-footer-sites-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Chrome Link">
+          Chrome
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="https://firebase.google.com/" class="devsite-footer-sites-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Firebase Link">
+          Firebase
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="https://cloud.google.com/" class="devsite-footer-sites-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Google Cloud Platform Link">
+          Google Cloud Platform
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="https://developers.google.com/products" class="devsite-footer-sites-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer All products Link">
+          All products
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+  
+
+  
+  <nav class="devsite-footer-utility-links" aria-label="Utility links">
+    
+    <ul class="devsite-footer-utility-list">
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event" href="https://developers.google.com/terms/site-terms" data-category="Site-Wide Custom Events" data-label="Footer Terms link">
+          Terms
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event" href="https://policies.google.com/privacy" data-category="Site-Wide Custom Events" data-label="Footer Privacy link">
+          Privacy
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 devsite-footer-utility-button">
+        
+        <span class="devsite-footer-utility-description">Sign up for the Google for Developers newsletter</span>
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event" href="https://developers.google.com/newsletter/subscribe" data-category="Site-Wide Custom Events" data-label="Footer Subscribe link">
+          Subscribe
+        </a>
+        
+      </li>
+      
+    </ul>
+    
+    
+<devsite-language-selector aria-label="Select your language preference.">
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" aria-current="true" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=en" lang="en">English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=id" lang="id">Bahasa Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=de" lang="de">Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=es" lang="es">Español</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=es-419" lang="es-419">Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=fr" lang="fr">Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=it" lang="it">Italiano</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=pl" lang="pl">Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=pt-br" lang="pt-br">Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=vi" lang="vi">Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=tr" lang="tr">Türkçe</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=ru" lang="ru">Русский</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=he" lang="he">עברית</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=ar" lang="ar">العربيّة</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=fa" lang="fa">فارسی</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=hi" lang="hi">हिंदी</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=bn" lang="bn">বাংলা</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=th" lang="th">ภาษาไทย</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=zh-cn" lang="zh-cn">中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=zh-tw" lang="zh-tw">中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=ja" lang="ja">日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=ko" lang="ko">한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+  </nav>
+</div>
+          
+        </devsite-footer-utility>
+        <devsite-panel style="height: auto;"></devsite-panel>
+        
+      </section></section>
+    <devsite-sitemask></devsite-sitemask>
+    <devsite-snackbar type="cookie-notification" data-cookie-notice="0" style="bottom: 0px;">
+</devsite-snackbar>
+    <devsite-tooltip></devsite-tooltip>
+    <devsite-heading-link></devsite-heading-link>
+    <devsite-analytics analytics-iframe="" enable-ga4="">
+      
+        <script type="application/json" analytics="">[{&#34;dimensions&#34;: {&#34;dimension5&#34;: &#34;en&#34;, &#34;dimension6&#34;: &#34;en&#34;, &#34;dimension3&#34;: false, &#34;dimension4&#34;: &#34;Cardboard&#34;, &#34;dimension1&#34;: &#34;Signed out&#34;, &#34;dimension11&#34;: false}, &#34;gaid&#34;: &#34;UA-24532603-1&#34;, &#34;metrics&#34;: {&#34;ratings_value&#34;: &#34;metric1&#34;, &#34;ratings_count&#34;: &#34;metric2&#34;}}, {&#34;dimensions&#34;: {&#34;dimension5&#34;: &#34;en&#34;, &#34;dimension6&#34;: &#34;en&#34;, &#34;dimension3&#34;: false, &#34;dimension4&#34;: &#34;Cardboard&#34;, &#34;dimension1&#34;: &#34;Signed out&#34;, &#34;dimension11&#34;: false}, &#34;gaid&#34;: &#34;UA-49880327-12&#34;, &#34;metrics&#34;: {&#34;ratings_value&#34;: &#34;metric1&#34;, &#34;ratings_count&#34;: &#34;metric2&#34;}}]</script>
+<script type="application/json" tag-management="" gtm="">{&#34;ga4&#34;: [&#34;G-272J68FCRF&#34;], &#34;ga4p&#34;: [&#34;G-272J68FCRF&#34;], &#34;gtm&#34;: [], &#34;parameters&#34;: {&#34;internalUser&#34;: &#34;False&#34;, &#34;language&#34;: {&#34;machineTranslated&#34;: &#34;False&#34;, &#34;requested&#34;: &#34;en&#34;, &#34;served&#34;: &#34;en&#34;}, &#34;pageType&#34;: &#34;article&#34;, &#34;projectName&#34;: &#34;Cardboard&#34;, &#34;signedIn&#34;: &#34;False&#34;, &#34;tenant&#34;: &#34;developers&#34;, &#34;recommendations&#34;: {&#34;sourcePage&#34;: &#34;&#34;, &#34;sourceType&#34;: 0, &#34;sourceRank&#34;: 0, &#34;sourceIdenticalDescriptions&#34;: 0, &#34;sourceTitleWords&#34;: 0, &#34;sourceDescriptionWords&#34;: 0, &#34;experiment&#34;: &#34;&#34;}, &#34;experiment&#34;: {&#34;ids&#34;: &#34;&#34;}}, &#34;tags&#34;: []}</script>
+      
+    <iframe sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/analytics-iframe.html"></iframe></devsite-analytics>
+    
+      <devsite-badger></devsite-badger>
+    
+    
+    <script nonce="">
+  
+  (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+    t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+    E.parentNode.insertBefore(t,E);})(window, document, 'script',
+    'https://www.gstatic.com/devrel-devsite/prod/v47124a092dd56bf2680cfca4b2ab69e9e6a534f056a1a0dbc4abcaa7cdbba977/developers/js/app_loader.js', '[1,"en",null,"/js/devsite_app_module.js","https://www.gstatic.com/devrel-devsite/prod/v47124a092dd56bf2680cfca4b2ab69e9e6a534f056a1a0dbc4abcaa7cdbba977","https://www.gstatic.com/devrel-devsite/prod/v47124a092dd56bf2680cfca4b2ab69e9e6a534f056a1a0dbc4abcaa7cdbba977/developers","https://developers-dot-devsite-v2-prod.appspot.com",null,null,["/_pwa/developers/manifest.json","https://www.gstatic.com/devrel-devsite/prod/v47124a092dd56bf2680cfca4b2ab69e9e6a534f056a1a0dbc4abcaa7cdbba977/images/video-placeholder.svg","https://www.gstatic.com/devrel-devsite/prod/v47124a092dd56bf2680cfca4b2ab69e9e6a534f056a1a0dbc4abcaa7cdbba977/developers/images/favicon-new.png","https://fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700&display=swap"],1,null,[1,6,8,12,14,17,21,25,40,50,52,63,70,75,76,80,87,91,92,93,97,98,100,101,102,103,104,105,107,108,109,110,111,112,113,115,117,118,120,122,124,125,126,127,129,130,131,132,133,134,135,136,138,140,141,144,147,148,149,150,151,152,154,155,156,157,158,159,161,163,164,165,168,169,170,172,173,179,180,182,183,186,190,191,193,196],"AIzaSyAP-jjEJBzmIyKR4F-3XITp8yM9T1gEEI8","AIzaSyB6xiKGDR5O3Ak2okS4rLkauxGUG7XP0hg","developers.google.com","AIzaSyAQk0fBONSGUqCNznf6Krs82Ap1-NV6J4o","AIzaSyCCxcqdrZ_7QMeLCRY20bh_SXdAYqy70KY",null,null,null,["MiscFeatureFlags__devpanel_url","Cloud__enable_cloud_dlp_service","Search__enable_acl_suggestions","Cloud__enable_free_trial_server_call","Search__enable_dynamic_content_confidential_banner","Profiles__enable_developer_profiles_dashboard_recommendations","Search__enable_page_map","Search__enable_devsite_serp","Experiments__reqs_query_experiments","Significatio__enable_experiment_id_caching","Cloud__enable_cloud_shell","Search__enable_faceted_search","AuthorPageInsights__enable_author_page_insights","Cloud__enable_cloud_shell_fte_user_flow","MiscFeatureFlags__developers_footer_image","Profiles__enable_suggested_interests","Profiles__enable_profile_collections","Cloud__enable_cloud_facet_chat","Profiles__enable_searchable_interests","Badges__enable_hide_badges","Profiles__enable_page_saving","MiscFeatureFlags__enable_tls_version_for_gaia_calls","Experiments__enable_experiments","BookNav__enable_collapsible_book_nav","Analytics__enable_ga4_analytics","Significatio__enable_footprints","Profiles__enable_profile_communities","Cloud__enable_cloudx_experiment_ids","Profiles__require_profile_eligibility_for_signin","MiscFeatureFlags__developers_footer_dark_image","Significatio__enable_by_tenant","Profiles__enable_developer_profiles_callout","SignIn__enable_auto_signin_oauth","Badges__enable_drag_and_drop_badges","Profiles__enable_profile_notifications_ui","Localization__enable_locale_redirects","Profiles__enable_developer_profiles_interests","BookNav__enable_book_nav_filtering","Cloud__enable_cloudx_ping","MiscFeatureFlags__emergency_css","Search__enable_suggestions_from_borg","Profiles__enable_public_developer_profiles","Badges__enable_delete_badges"],null,null,"AIzaSyBLEMok-5suZ67qRPzx0qUtbnLmyT_kCVE","https://developerscontentserving-pa.clients6.google.com","AIzaSyCM4QpTRSqP5qI4Dvjt4OAScIN8sOUlO-k","https://developerscontentsearch-pa.clients6.google.com",1]')
+  
+</script>
+    <devsite-a11y-announce aria-live="assertive" aria-atomic="true"></devsite-a11y-announce>
+  
+</body></html>
