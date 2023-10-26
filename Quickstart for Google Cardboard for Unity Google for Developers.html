@@ -1,0 +1,470 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this file,
+   - You can obtain one at http://mozilla.org/MPL/2.0/. -->
+<!DOCTYPE html>
+<html lang="de" dir="ltr" platform="macosx"><head>
+    <title id="reader-title">Quickstart for Google Cardboard for Unity &nbsp;|&nbsp; Google for Developers</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src chrome:; img-src data: *; media-src *; object-src 'none'">
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width; user-scalable=0">
+    <link rel="stylesheet" href="chrome://global/skin/aboutReader.css" type="text/css">
+    <link rel="localization" href="toolkit/about/aboutReader.ftl">
+    <link rel="localization" href="toolkit/branding/brandings.ftl">
+  <link rel="stylesheet" href="chrome://global/skin/narrate.css"></head>
+
+  <body class="dark sans-serif loaded" style="--font-size: 16px; --content-width: 50em;">
+    <div class="top-anchor"></div>
+
+    <div id="toolbar" class="toolbar-container">
+      <div class="toolbar reader-toolbar">
+        <div class="reader-controls" articledir="ltr">
+          <button class="close-button toolbar-button" aria-labelledby="toolbar-close" data-telemetry-id="reader-close">
+            <span class="hover-label" id="toolbar-close" data-l10n-id="about-reader-toolbar-close">Leseansicht schließen</span>
+          </button>
+          <ul class="dropdown style-dropdown">
+            <li>
+              <button class="dropdown-toggle toolbar-button style-button" aria-labelledby="toolbar-type-controls" data-telemetry-id="reader-type-controls">
+                <span class="hover-label" id="toolbar-type-controls" data-l10n-id="about-reader-toolbar-type-controls">Schrifteinstellungen</span>
+              </button>
+            </li>
+            <li class="dropdown-popup">
+              <div class="dropdown-arrow"></div>
+              <div class="font-type-buttons radiorow"><input id="radio-itemsans-serif-button" type="radio" class="radio-button" name="font-type" checked="checked"><label for="radio-itemsans-serif-button" class="sans-serif-button" data-l10n-id="about-reader-font-type-sans-serif" checked="true">Sans-serif</label><input id="radio-itemserif-button" type="radio" class="radio-button" name="font-type"><label for="radio-itemserif-button" class="serif-button" data-l10n-id="about-reader-font-type-serif">Serif</label></div>
+              <div class="font-size-buttons buttonrow">
+                <button class="minus-button" data-l10n-id="about-reader-toolbar-minus" title="Kleinere Schrift"></button>
+                <span class="font-size-value">3</span>
+                <button class="plus-button" data-l10n-id="about-reader-toolbar-plus" title="Größere Schrift"></button>
+              </div>
+              <div class="content-width-buttons buttonrow">
+                <button class="content-width-minus-button" data-l10n-id="about-reader-toolbar-contentwidthminus" title="Schmalerer Inhalt"></button>
+                <span class="content-width-value">7</span>
+                <button class="content-width-plus-button" data-l10n-id="about-reader-toolbar-contentwidthplus" title="Breiterer Inhalt"></button>
+              </div>
+              <div class="line-height-buttons buttonrow">
+                <button class="line-height-minus-button" data-l10n-id="about-reader-toolbar-lineheightminus" title="Kleinerer Zeilenabstand"></button>
+                <span class="line-height-value">4</span>
+                <button class="line-height-plus-button" data-l10n-id="about-reader-toolbar-lineheightplus" title="Größerer Zeilenabstand"></button>
+              </div>
+              <div class="color-scheme-buttons radiorow"><input id="radio-itemlight-button" type="radio" class="radio-button" name="color-scheme"><label for="radio-itemlight-button" class="light-button" data-l10n-id="about-reader-color-scheme-light" title="Helles Farbschema">Hell</label><input id="radio-itemdark-button" type="radio" class="radio-button" name="color-scheme"><label for="radio-itemdark-button" class="dark-button" data-l10n-id="about-reader-color-scheme-dark" title="Dunkles Farbschema">Dunkel</label><input id="radio-itemsepia-button" type="radio" class="radio-button" name="color-scheme"><label for="radio-itemsepia-button" class="sepia-button" data-l10n-id="about-reader-color-scheme-sepia" title="Sepia-Farbschema">Sepia</label><input id="radio-itemauto-button" type="radio" class="radio-button" name="color-scheme" checked="checked"><label for="radio-itemauto-button" class="auto-button" data-l10n-id="about-reader-color-scheme-auto" checked="true" title="Automatisches Farbschema">Automatisch</label></div>
+            </li>
+          </ul>
+        <ul class="dropdown narrate-dropdown"><li><button class="dropdown-toggle toolbar-button narrate-toggle" data-telemetry-id="reader-listen" aria-label="Listen (N)"><span class="hover-label">Listen (N)</span></button></li><li class="dropdown-popup"><div class="narrate-row narrate-control"><button class="narrate-skip-previous" disabled="disabled" title="Back"></button><button class="narrate-start-stop" title="Start (N)"></button><button class="narrate-skip-next" disabled="disabled" title="Forward"></button></div><div class="narrate-row narrate-rate"><input class="narrate-rate-input" value="0" step="5" max="100" min="-100" type="range" title="Speed"></div><div class="narrate-row narrate-voices"><div class="voiceselect voice-select"><button class="select-toggle" aria-controls="voice-options">
+      <span class="label">Voice:</span> <span class="current-voice">Default</span>
+    </button>
+    <div class="options" id="voice-options" role="listbox"><button data-value="automatic" class="option selected" tabindex="-1" role="option" aria-selected="true">Default</button><button data-value="urn:moz-tts:osx:com.apple.speech.synthesis.voice.Albert" class="option" tabindex="-1" role="option">Albert (Englisch)</button><button data-value="urn:moz-tts:osx:com.apple.speech.synthesis.voice.BadNews" class="option" tabindex="-1" role="option">Bad News (Englisch)</button><button data-value="urn:moz-tts:osx:com.apple.speech.synthesis.voice.Bahh" class="option" tabindex="-1" role="option">Bahh (Englisch)</button><button data-value="urn:moz-tts:osx:com.apple.speech.synthesis.voice.Bells" class="option" tabindex="-1" role="option">Bells (Englisch)</button><button data-value="urn:moz-tts:osx:com.apple.speech.synthesis.voice.Boing" class="option" tabindex="-1" role="option">Boing (Englisch)</button><button data-value="urn:moz-tts:osx:com.apple.speech.synthesis.voice.Bubbles" class="option" tabindex="-1" role="option">Bubbles (Englisch)</button><button data-value="urn:moz-tts:osx:com.apple.speech.synthesis.voice.Cellos" class="option" tabindex="-1" role="option">Cellos (Englisch)</button><button data-value="urn:moz-tts:osx:com.apple.voice.compact.en-GB.Daniel" class="option" tabindex="-1" role="option">Daniel (Englisch)</button><button data-value="urn:moz-tts:osx:com.apple.eloquence.en-GB.Eddy" class="option" tabindex="-1" role="option">Eddy (English (UK)) (Englisch)</button><button data-value="urn:moz-tts:osx:com.apple.eloquence.en-US.Eddy" class="option" tabindex="-1" role="option">Eddy (English (US)) (Englisch)</button><button data-value="urn:moz-tts:osx:com.apple.eloquence.en-GB.Flo" class="option" tabindex="-1" role="option">Flo (English (UK)) (Englisch)</button><button data-value="urn:moz-tts:osx:com.apple.eloquence.en-US.Flo" class="option" tabindex="-1" role="option">Flo (English (US)) (Englisch)</button><button data-value="urn:moz-tts:osx:com.apple.speech.synthesis.voice.Fred" class="option" tabindex="-1" role="option">Fred (Englisch)</button><button data-value="urn:moz-tts:osx:com.apple.speech.synthesis.voice.GoodNews" class="option" tabindex="-1" role="option">Good News (Englisch)</button><button data-value="urn:moz-tts:osx:com.apple.eloquence.en-GB.Grandma" class="option" tabindex="-1" role="option">Grandma (English (UK)) (Englisch)</button><button data-value="urn:moz-tts:osx:com.apple.eloquence.en-US.Grandma" class="option" tabindex="-1" role="option">Grandma (English (US)) (Englisch)</button><button data-value="urn:moz-tts:osx:com.apple.eloquence.en-GB.Grandpa" class="option" tabindex="-1" role="option">Grandpa (English (UK)) (Englisch)</button><button data-value="urn:moz-tts:osx:com.apple.eloquence.en-US.Grandpa" class="option" tabindex="-1" role="option">Grandpa (English (US)) (Englisch)</button><button data-value="urn:moz-tts:osx:com.apple.speech.synthesis.voice.Hysterical" class="option" tabindex="-1" role="option">Jester (Englisch)</button><button data-value="urn:moz-tts:osx:com.apple.speech.synthesis.voice.Junior" class="option" tabindex="-1" role="option">Junior (Englisch)</button><button data-value="urn:moz-tts:osx:com.apple.voice.compact.en-AU.Karen" class="option" tabindex="-1" role="option">Karen (Englisch)</button><button data-value="urn:moz-tts:osx:com.apple.speech.synthesis.voice.Kathy" class="option" tabindex="-1" role="option">Kathy (Englisch)</button><button data-value="urn:moz-tts:osx:com.apple.voice.compact.en-IE.Moira" class="option" tabindex="-1" role="option">Moira (Englisch)</button><button data-value="urn:moz-tts:osx:com.apple.speech.synthesis.voice.Organ" class="option" tabindex="-1" role="option">Organ (Englisch)</button><button data-value="urn:moz-tts:osx:com.apple.speech.synthesis.voice.Ralph" class="option" tabindex="-1" role="option">Ralph (Englisch)</button><button data-value="urn:moz-tts:osx:com.apple.eloquence.en-GB.Reed" class="option" tabindex="-1" role="option">Reed (English (UK)) (Englisch)</button><button data-value="urn:moz-tts:osx:com.apple.eloquence.en-US.Reed" class="option" tabindex="-1" role="option">Reed (English (US)) (Englisch)</button><button data-value="urn:moz-tts:osx:com.apple.voice.compact.en-IN.Rishi" class="option" tabindex="-1" role="option">Rishi (Englisch)</button><button data-value="urn:moz-tts:osx:com.apple.eloquence.en-GB.Rocko" class="option" tabindex="-1" role="option">Rocko (English (UK)) (Englisch)</button><button data-value="urn:moz-tts:osx:com.apple.eloquence.en-US.Rocko" class="option" tabindex="-1" role="option">Rocko (English (US)) (Englisch)</button><button data-value="urn:moz-tts:osx:com.apple.voice.compact.en-US.Samantha" class="option" tabindex="-1" role="option">Samantha (Englisch)</button><button data-value="urn:moz-tts:osx:com.apple.eloquence.en-GB.Sandy" class="option" tabindex="-1" role="option">Sandy (English (UK)) (Englisch)</button><button data-value="urn:moz-tts:osx:com.apple.eloquence.en-US.Sandy" class="option" tabindex="-1" role="option">Sandy (English (US)) (Englisch)</button><button data-value="urn:moz-tts:osx:com.apple.eloquence.en-GB.Shelley" class="option" tabindex="-1" role="option">Shelley (English (UK)) (Englisch)</button><button data-value="urn:moz-tts:osx:com.apple.eloquence.en-US.Shelley" class="option" tabindex="-1" role="option">Shelley (English (US)) (Englisch)</button><button data-value="urn:moz-tts:osx:com.apple.speech.synthesis.voice.Princess" class="option" tabindex="-1" role="option">Superstar (Englisch)</button><button data-value="urn:moz-tts:osx:com.apple.voice.compact.en-ZA.Tessa" class="option" tabindex="-1" role="option">Tessa (Englisch)</button><button data-value="urn:moz-tts:osx:com.apple.speech.synthesis.voice.Trinoids" class="option" tabindex="-1" role="option">Trinoids (Englisch)</button><button data-value="urn:moz-tts:osx:com.apple.speech.synthesis.voice.Whisper" class="option" tabindex="-1" role="option">Whisper (Englisch)</button><button data-value="urn:moz-tts:osx:com.apple.speech.synthesis.voice.Deranged" class="option" tabindex="-1" role="option">Wobble (Englisch)</button><button data-value="urn:moz-tts:osx:com.apple.speech.synthesis.voice.Zarvox" class="option" tabindex="-1" role="option">Zarvox (Englisch)</button></div></div></div><div class="dropdown-arrow"></div></li></ul><button data-buttonid="pocket-button" data-telemetry-id="reader-save-to-pocket" class="toolbar-button pocket-button" aria-labelledby="label-pocket-button" style="background-image: url(&quot;chrome://global/skin/icons/pocket.svg&quot;);"><span class="hover-label" id="label-pocket-button" data-l10n-id="about-reader-toolbar-savetopocket">In Pocket speichern</span></button></div>
+      </div>
+    </div>
+
+    <div class="container" style="--line-height: 1.6em;" lang="en" dir="ltr">
+      <div class="header reader-header reader-show-element">
+        <a class="domain reader-domain" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=en">developers.google.com</a>
+        <div class="domain-border"></div>
+        <h1 class="reader-title">Quickstart for Google Cardboard for Unity</h1>
+        <div class="credits reader-credits"></div>
+        <div class="meta-data">
+          <div class="reader-estimated-time" data-l10n-args="{&quot;range&quot;:&quot;9–11&quot;,&quot;rangePlural&quot;:&quot;other&quot;}" data-l10n-id="about-reader-estimated-read-time" dir="ltr">9–11 Minuten</div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="content">
+        <div class="moz-reader-content reader-show-element"><div id="readability-page-1" class="page"><div role="main">
+          
+          
+          
+          
+          
+            
+              
+
+
+
+
+
+
+
+
+
+
+
+<article>
+  
+  
+  
+  
+
+  
+  
+
+        
+        <span>bookmark_border</span>
+
+        <span>
+          
+          Stay organized with collections
+        </span>
+        <span>
+          
+          Save and categorize content based on your preferences.
+        </span>
+      
+    
+  
+
+  <ul><li><span role="heading" aria-level="2"><span>On this page</span></span></li><li><a href="#set_up_your_development_environment" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="0"><span>Set up your development environment</span></a></li><li><a href="#import_the_sdk_and_create_a_new_project" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="1"><span>Import the SDK and create a new project</span></a></li><li><a href="#configuring_hellocardboard_scene" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="2"><span>Configuring HelloCardboard scene</span></a></li><li><a href="#configuring_android_project_settings" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="3"><span>Configuring Android project settings</span></a><ul><li><a href="#player_settings" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="3.0"><span>Player Settings</span></a></li><li><a href="#build_your_project" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="3.1"><span>Build your project</span></a></li></ul></li><li><a href="#configuring_ios_project_settings" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="4"><span>Configuring iOS project settings</span></a><ul><li><a href="#player_settings_2" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="4.0"><span>Player Settings</span></a></li><li><a href="#build_your_project_2" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="4.1"><span>Build your project</span></a></li></ul></li><li><a href="#recentering" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="5"><span>Recentering</span></a></li><li><a href="#turning_vr_mode_on_and_off" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="6"><span>Turning VR mode on and off</span></a></li><li><a href="#next_steps" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="7"><span>Next steps</span></a></li><li></li></ul>
+  
+    
+    
+    
+  
+
+  
+
+
+
+
+
+
+<div>
+
+  
+    
+
+
+<p>This guide shows you how to use the <a href="https://github.com/googlevr/cardboard-xr-plugin">Google Cardboard XR Plugin for
+Unity</a> for Unity to create your
+own Virtual Reality (VR) experiences.</p>
+
+<p>You can use the Cardboard SDK to turn a mobile phone into a VR platform. A
+smartphone can display 3D scenes with stereoscopic rendering, track and react to
+head movements, and interact with apps by detecting when the user presses the
+viewer button.</p>
+
+<p>To get started, you'll use <strong>HelloCardboard</strong>, a demo game that demonstrates the
+core features of the Cardboard SDK. In the game, users look around a virtual
+world to find and collect objects. It shows you how to:</p>
+
+<ul>
+<li>Set up your development environment</li>
+<li>Download and build the demo app</li>
+<li>Scan the QR code of a Cardboard viewer to save its parameters</li>
+<li>Track the user’s head movements</li>
+<li>Render stereoscopic images by setting the correct distortion for each eye</li>
+<li>Turn VR mode on and off</li>
+</ul>
+
+<h2 id="set_up_your_development_environment" data-text="Set up your development environment" role="presentation"><span role="heading" aria-level="2">Set up your development environment</span></h2>
+
+<p>Software requirements:</p>
+
+<ul>
+<li><a href="https://unity3d.com/get-unity/download/archive">Unity 2020.3.36f1</a> or later
+<ul>
+<li>Make sure to include Android and iOS Build Support during installation.</li>
+</ul></li>
+<li><a href="https://git-scm.com/">Git</a> must be installed and the <code dir="ltr">git</code> executable must
+be on the <code dir="ltr">PATH</code> environment variable. See <a href="https://docs.unity3d.com/Manual/upm-git.html">Unity's package manager git
+support</a> docs for more
+details.</li>
+</ul>
+
+<h2 id="import_the_sdk_and_create_a_new_project" data-text="Import the SDK and create a new project" role="presentation"><span role="heading" aria-level="2">Import the SDK and create a new project</span></h2>
+
+<p>Follow these steps to import the Unity SDK and create a new project.</p>
+
+<ol>
+<li>Open Unity and create a new <strong>3D</strong> project.</li>
+<li>In Unity, go to <strong>Window</strong> &gt; <strong>Package Manager</strong>.</li>
+<li>Click <strong>+</strong> and select <strong>Add package from git URL</strong>.</li>
+<li>Paste <code dir="ltr">https://github.com/googlevr/cardboard-xr-plugin.git</code> into the text
+entry field. <br> The package should be added to the installed packages.</li>
+<li>Navigate to the <strong>Google Cardboard XR Plugin for Unity</strong> package. In the
+<strong>Samples</strong> section, choose <strong>Import into Project</strong>. <br> The sample assets
+should be loaded into <code dir="ltr">Assets/Samples/Google Cardboard/&lt;version&gt;/Hello
+Cardboard</code>.</li>
+</ol>
+
+<h2 id="configuring_hellocardboard_scene" data-text="Configuring HelloCardboard scene">Configuring HelloCardboard scene</h2>
+
+<ol>
+<li>Navigate to <code dir="ltr">Assets/Samples/Google Cardboard/&lt;version&gt;/Hello
+Cardboard/Scenes</code>, select <strong>Add Open Scenes</strong>, and choose <strong>HelloCardboard</strong>
+to open the sample scene.</li>
+<li>Open the <strong>Layers</strong> menu and select <strong>Edit Layers...</strong>.</li>
+<li>Define a new layer called "Interactive".</li>
+<li>Click on the <strong>Treasure</strong> GameObject to open the Inspector window. Set its
+layer to be "Interactive". If a pop up window appears asking if you want to
+set layer to Interactive for all child objects as well, click on "Yes,
+change children".</li>
+<li>Click on the <strong>Player &gt; Camera &gt; CardboardReticlePointer</strong> GameObject to
+open the Inspector window. In the "Carboard reticle pointer" script, select
+"Interactive" as the <strong>Reticle Interaction Layer Mask</strong>.</li>
+</ol>
+
+<h2 id="configuring_android_project_settings" data-text="Configuring Android project settings">Configuring Android project settings</h2>
+
+<p>Navigate to <strong>File</strong> &gt; <strong>Build Settings</strong>.</p>
+
+<ol>
+<li>Select <strong>Android</strong> and choose <strong>Switch Platform</strong>.</li>
+<li>Select <strong>Add Open Scenes</strong> and choose <strong>HelloCardboard</strong>.</li>
+</ol>
+
+<h3 id="player_settings" data-text="Player Settings">Player Settings</h3>
+
+<h4 id="resolution_and_presentation" data-text="Resolution and Presentation">Resolution and Presentation</h4>
+
+<p>Navigate to <strong>Project Settings</strong> &gt; <strong>Player</strong> &gt; <strong>Resolution and Presentation</strong>.</p>
+
+<ol>
+<li>Set the <strong>Default Orientation</strong> to <strong>Landscape Left</strong> or <strong>Landscape
+Right</strong>.</li>
+<li>Disable <strong>Optimized Frame Pacing</strong>.</li>
+</ol>
+
+<h4 id="other_settings" data-text="Other Settings">Other Settings</h4>
+
+<p>Navigate to <strong>Project Settings</strong> &gt; <strong>Player</strong> &gt; <strong>Other Settings</strong>.</p>
+
+<ol>
+<li>Choose <code dir="ltr">OpenGLES2</code>, <code dir="ltr">OpenGLES3</code>, or <code dir="ltr">Vulkan</code>, or any combination of them in
+<strong>Graphics APIs</strong>.</li>
+<li>Select <code dir="ltr">Android 7.0 'Nougat' (API level 24)</code> or higher in <strong>Minimum API
+Level</strong>.</li>
+<li>Select <code dir="ltr">API level 31</code> or higher in <strong>Target API Level</strong>.</li>
+<li>Select <code dir="ltr">IL2CPP</code> in <strong>Scripting Backend</strong>.</li>
+<li>Select desired architectures by choosing <code dir="ltr">ARMv7</code>, <code dir="ltr">ARM64</code>, or both in
+<strong>Target Architectures</strong>.</li>
+<li>Select <code dir="ltr">Require</code> in <strong>Internet Access</strong>.</li>
+<li>Specify your company domain under <strong>Package Name</strong>.</li>
+<li>If <code dir="ltr">Vulkan</code> was selected as <strong>Graphics API</strong>:
+<ul>
+<li>Uncheck <strong>Apply display rotation during rendering</strong> checkbox in <strong>Vulkan
+Settings</strong>.</li>
+<li>If the Unity version is 2021.2 or above, Select <code dir="ltr">ETC2</code> in <strong>Texture
+compression format</strong>.</li>
+</ul></li>
+</ol>
+
+<h4 id="publishing_settings" data-text="Publishing Settings">Publishing Settings</h4>
+
+<p>Navigate to <strong>Project Settings</strong> &gt; <strong>Player</strong> &gt; <strong>Publishing Settings</strong>.</p>
+
+<ol>
+<li>In the <strong>Build</strong> section, select <code dir="ltr">Custom Main Gradle Template</code> and <code dir="ltr">Custom
+Gradle Properties Template</code>.</li>
+<li><p>Add the following lines to the dependencies section of
+<code dir="ltr">Assets/Plugins/Android/mainTemplate.gradle</code>:</p>
+<pre dir="ltr"><code dir="ltr"><span>&nbsp; implementation </span><span>'androidx.appcompat:appcompat:1.4.2'</span><span><br>&nbsp; implementation </span><span>'com.google.android.gms:play-services-vision:20.1.3'</span><span><br>&nbsp; implementation </span><span>'com.google.android.material:material:1.6.1'</span><span><br>&nbsp; implementation </span><span>'com.google.protobuf:protobuf-javalite:3.19.4'</span><span><br></span></code></pre></li>
+<li><p>Add the following lines to
+<code dir="ltr">Assets/Plugins/Android/gradleTemplate.properties</code>:</p>
+<pre dir="ltr"><code dir="ltr"><span>&nbsp; android</span><span>.</span><span>enableJetifier</span><span>=</span><span>true</span><span><br>&nbsp; android</span><span>.</span><span>useAndroidX</span><span>=</span><span>true</span><span><br></span></code></pre></li>
+</ol>
+
+<h4 id="xr_plug-in_management_settings" data-text="XR Plug-in Management Settings">XR Plug-in Management Settings</h4>
+
+<p>Navigate to <strong>Project Settings</strong> &gt; <strong>XR Plug-in Management</strong>.</p>
+
+<ol>
+<li>Select <code dir="ltr">Cardboard XR Plugin</code> under <strong>Plug-in Providers</strong>.</li>
+</ol>
+
+<h3 id="build_your_project" data-text="Build your project">Build your project</h3>
+
+<p>Navigate to <strong>File</strong> &gt; <strong>Build Settings</strong>.</p>
+
+<ol>
+<li>Select <strong>Build</strong>, or choose a device and select <strong>Build and Run</strong>.</li>
+</ol>
+
+<h2 id="configuring_ios_project_settings" data-text="Configuring iOS project settings">Configuring iOS project settings</h2>
+
+<p>Navigate to <strong>File</strong> &gt; <strong>Build Settings</strong>.</p>
+
+<ol>
+<li>Select <strong>iOS</strong> and choose <strong>Switch Platform</strong>.</li>
+<li>Select <strong>Add Open Scenes</strong> and choose <strong>HelloCardboard</strong>.</li>
+</ol>
+
+<h3 id="player_settings_2" data-text="Player Settings">Player Settings</h3>
+
+<h4 id="resolution_and_presentation_2" data-text="Resolution and Presentation">Resolution and Presentation</h4>
+
+<p>Navigate to <strong>Project Settings</strong> &gt; <strong>Player</strong> &gt; <strong>Resolution and Presentation</strong>.</p>
+
+<ol>
+<li>Set the <strong>Default Orientation</strong> to <strong>Landscape Left</strong> or <strong>Landscape
+Right</strong>.</li>
+</ol>
+
+<h4 id="other_settings_2" data-text="Other Settings">Other Settings</h4>
+
+<p>Navigate to <strong>Project Settings</strong> &gt; <strong>Player</strong> &gt; <strong>Other Settings</strong>.</p>
+
+<ol>
+<li>In <strong>Camera Usage Description</strong>, write <code dir="ltr">Cardboard SDK requires camera
+permission to read the QR code (required to get the encoded device
+parameters).</code>.</li>
+<li>In <strong>Target minimum iOS Version</strong>, write <code dir="ltr">12.0</code>.</li>
+<li>Specify your company domain under <strong>Package Name</strong>.</li>
+</ol>
+
+<h4 id="xr_plug-in_management_settings_2" data-text="XR Plug-in Management Settings">XR Plug-in Management Settings</h4>
+
+<p>Navigate to <strong>Project Settings</strong> &gt; <strong>XR Plug-in Management</strong>.</p>
+
+<ol>
+<li>Select <code dir="ltr">Cardboard XR Plugin</code> under <strong>Plug-in Providers</strong>.</li>
+</ol>
+
+<h3 id="build_your_project_2" data-text="Build your project">Build your project</h3>
+
+<p>Navigate to <strong>File</strong> &gt; <strong>Build Settings</strong>.</p>
+
+<ol>
+<li>Select <strong>Build</strong> or <strong>Build and Run</strong>.</li>
+</ol>
+
+<h2 id="recentering" data-text="Recentering">Recentering</h2>
+
+<p>The <a href="https://github.com/googlevr/cardboard">Cardboard SDK</a> allows you to
+recenter the head tracker using
+<a href="https://github.com/googlevr/cardboard-xr-plugin/blob/master/Runtime/Api.cs"><code dir="ltr">Recenter()</code></a>.</p>
+
+<p>Follow these steps to try it out using the sample application:</p>
+
+<ol>
+<li>Move the device to the position you want to recenter (use as new looking
+forward head pose).</li>
+<li>Hold the trigger of your Cardboard device active for at least three seconds.</li>
+<li>Release the trigger.</li>
+<li>The initial pose is now in the direction the camera is pointing.</li>
+</ol>
+
+<h2 id="turning_vr_mode_on_and_off" data-text="Turning VR mode on and off">Turning VR mode on and off</h2>
+
+<p>The <a href="https://docs.unity3d.com/Manual/com.unity.xr.management.html">Unity XR Plugin Management
+API</a> lets you turn
+VR mode on or off for the <a href="https://github.com/googlevr/cardboard-xr-plugin">Google Cardboard XR Plugin for
+Unity</a>. End-user documentation
+and usage examples are available in Unity's <a href="https://docs.unity3d.com/Packages/com.unity.xr.management@3.2/manual/index.html">End-user
+documentation</a>.</p>
+
+<p>The <strong>VrMode</strong> scene in HelloCardboard sample shows a basic usage of the
+aformentioned API. In this scene, VR mode can be turned off by tapping <strong>exit</strong>
+<img src="Quickstart%20for%20Google%20Cardboard%20for%20Unity%20Google%20for%20Developers-Dateien/quantum_ic_close_black_18.png" alt="">, and can be turned on again just by
+tapping anywhere on the screen. Check
+<a href="https://github.com/googlevr/cardboard-xr-plugin/blob/master/Samples%7E/hellocardboard-unity/Scripts/VrModeController.cs">VrModeController.cs</a>
+for details about how this is performed.</p>
+
+<h2 id="next_steps" data-text="Next steps">Next steps</h2>
+
+<ul>
+<li>Review the <a href="https://developers.google.com/cardboard/develop/branding-guidelines">Cardboard branding guidelines</a>.</li>
+</ul>
+
+  
+
+  
+</div>
+
+  
+
+  
+    
+      
+    
+    
+      
+    
+  
+       
+    
+    
+      <div><h2>Recommended for you</h2></div><div><div><h3><a href="https://developers.google.com/cardboard/develop/c/quickstart?rec=CkBodHRwczovL2RldmVsb3BlcnMuZ29vZ2xlLmNvbS9jYXJkYm9hcmQvZGV2ZWxvcC91bml0eS9xdWlja3N0YXJ0EAEYDSABKAYwHDoIMzkzMDA0Nzc" data-category="Site-Wide Custom Events" data-label="devsite-recommendation card link" data-action="click">Quickstart for Google Cardboard for Android NDK</a></h3><p>This
+ guide shows you how to use the Cardboard SDK for Android to create your
+ own Virtual Reality (VR) experiences. You can use the Cardboard SDK to 
+turn a smartphone into a VR platform. A smartphone
+can display 3D scenes with stereoscopic rendering,</p><p>Updated <span>26. Apr. 2023</span></p></div><div><h3><a href="https://developers.google.com/vr/develop/unity/get-started-android?rec=CkBodHRwczovL2RldmVsb3BlcnMuZ29vZ2xlLmNvbS9jYXJkYm9hcmQvZGV2ZWxvcC91bml0eS9xdWlja3N0YXJ0EAIYDSABKAgwGToIMzkzMDA0Nzc" data-category="Site-Wide Custom Events" data-label="devsite-recommendation card link" data-action="click">Quickstart for Google VR SDK for Unity with Android</a></h3><p>This
+ guide shows you how to set up Google VR development with Unity and 
+build a
+demo Daydream or Cardboard app for Android. Hardware requirements: 
+Daydream: You'll need a Daydream-ready phone and a Daydream View. 
+Cardboard: You'll need an Android</p><p>Updated <span>12. Dez. 2019</span></p></div><div><h3><a href="https://developers.google.com/cardboard/develop/branding-guidelines?rec=CkBodHRwczovL2RldmVsb3BlcnMuZ29vZ2xlLmNvbS9jYXJkYm9hcmQvZGV2ZWxvcC91bml0eS9xdWlja3N0YXJ0EAMYDSABKAMwHzoIMzkzMDA0Nzc" data-category="Site-Wide Custom Events" data-label="devsite-recommendation card link" data-action="click">Cardboard Branding Guidelines</a></h3><p>The "Google Cardboard" name is a trademark owned by Google and is not included
+within the assets licensed under the Apache License 2.0. Cardboard is a free
+and open-source SDK that developers can use to create apps that are compatible
+with the Google</p><p>Updated <span>20. Mai 2020</span></p></div></div>
+    
+  
+
+  
+  
+</article>
+
+
+
+  <p>All rights reserved. Java is a registered trademark of Oracle and/or its affiliates.</p>
+  <p>Last updated 2023-10-05 UTC.</p>
+
+
+
+
+
+
+
+  
+<p>
+  <template>
+  [{
+      "type": "thumb-down",
+      "id": "missingTheInformationINeed",
+      "label":"Missing the information I need"
+    },{
+      "type": "thumb-down",
+      "id": "tooComplicatedTooManySteps",
+      "label":"Too complicated / too many steps"
+    },{
+      "type": "thumb-down",
+      "id": "outOfDate",
+      "label":"Out of date"
+    },{
+      "type": "thumb-down",
+      "id": "samplesCodeIssue",
+      "label":"Samples / code issue"
+    },{
+      "type": "thumb-down",
+      "id": "otherDown",
+      "label":"Other"
+    }]
+  </template>
+  <template>
+  [{
+      "type": "thumb-up",
+      "id": "easyToUnderstand",
+      "label":"Easy to understand"
+    },{
+      "type": "thumb-up",
+      "id": "solvedMyProblem",
+      "label":"Solved my problem"
+    },{
+      "type": "thumb-up",
+      "id": "otherUp",
+      "label":"Other"
+    }]
+  </template>
+  
+</p>
+            
+          
+        </div></div></div>
+      </div>
+
+      <div>
+        <div class="reader-message"></div>
+      </div>
+      <div aria-owns="toolbar"></div>
+    </div>
+  
+
+</body></html>
