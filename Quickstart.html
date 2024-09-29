@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr" platform="macosx" style="--font-family: Helvetica, Arial, sans-serif; --font-weight: normal;"><head>
+    <title id="reader-title">Kurzanleitung für Google Cardboard für Unity</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src chrome:; img-src data: *; media-src *; object-src 'none'">
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width; user-scalable=0">
+    <link rel="stylesheet" href="chrome://global/skin/design-system/tokens-brand.css">
+    <link rel="stylesheet" href="chrome://global/skin/aboutReader.css" type="text/css">
+    <link rel="localization" href="toolkit/about/aboutReader.ftl">
+    <link rel="localization" href="toolkit/branding/brandings.ftl">
+    <script type="module" src="chrome://global/content/reader/moz-slider.mjs"></script>
+    <script type="module" src="chrome://global/content/reader/color-input.mjs"></script>
+    <script type="module" src="chrome://global/content/elements/named-deck.js"></script>
+  <link rel="stylesheet" href="chrome://global/skin/narrate-improved.css"><link rel="shortcut icon" href="https://www.gstatic.com/devrel-devsite/prod/vdf5af65c45d9e2fdd493c581ff01cb1d11a21b4420a9fcc957400a26863da9d2/developers/images/touchicon-180-new.png"></head>
+
+  <body class="light loaded" style="--content-width: 50em; --font-size: 18px;">
+    <div class="top-anchor"></div>
+
+    <div id="toolbar" class="toolbar-container">
+      <div class="toolbar reader-toolbar">
+        <div class="reader-controls" articledir="ltr">
+          <button class="close-button toolbar-button" aria-labelledby="toolbar-close" data-telemetry-id="reader-close">
+            <span class="hover-label" id="toolbar-close" data-l10n-id="about-reader-toolbar-close">Leseansicht schließen</span>
+          </button>
+          <ul class="dropdown improved-style-dropdown" id="improved-text-menu">
+            <li>
+              <button class="dropdown-toggle toolbar-button improved-style-button" aria-labelledby="toolbar-text-layout-controls" data-telemetry-id="reader-text-layout-controls">
+                <span class="hover-label" id="toolbar-text-layout-controls" data-l10n-id="about-reader-toolbar-text-layout-controls">Text und Layout</span>
+              </button>
+            </li>
+            <li class="dropdown-popup" id="text-layout-controls" tabindex="-1">
+              <h2 data-l10n-id="about-reader-text-header" id="about-reader-text-header">Text</h2>
+              <div id="text-size-controls">
+                <span data-l10n-id="about-reader-text-size-label" id="about-reader-text-size-label">Textgröße</span>
+                <div class="text-size-buttons buttonrow">
+                  <button class="text-size-minus-button" data-l10n-id="about-reader-toolbar-minus" title="Kleinere Schrift"></button>
+                  <button class="text-size-plus-button" data-l10n-id="about-reader-toolbar-plus" title="Größere Schrift"></button>
+                </div>
+              </div>
+              <div id="font-controls">
+                <div id="font-type-dropdown" class="dropdown-selector">
+                  <label for="font-type-selector" data-l10n-id="about-reader-font-type-selector-label">Schriftart</label>
+                  <select name="font-type-selector" id="font-type-selector"><option data-l10n-id="about-reader-font-type-sans-serif" value="sans-serif" selected="true">Sans-serif</option><option data-l10n-id="about-reader-font-type-serif" value="serif">Serif</option><option data-l10n-id="about-reader-font-type-monospace" value="monospace">Feste Breite</option></select>
+                </div>
+                <div id="font-weight-dropdown" class="dropdown-selector">
+                  <label for="font-weight-selector" data-l10n-id="about-reader-font-weight-selector-label">Schriftstärke</label>
+                  <select name="font-weight-selector" id="font-weight-selector"><option data-l10n-id="about-reader-font-weight-regular" value="regular" selected="true">Normal</option><option data-l10n-id="about-reader-font-weight-light" value="light">Dünn</option><option data-l10n-id="about-reader-font-weight-bold" value="bold">Fett</option></select>
+                </div>
+              </div>
+              <hr>
+              <h2 data-l10n-id="about-reader-layout-header" id="about-reader-layout-header">Layout</h2>
+              <div id="content-width-slider" class="slider-container"><moz-slider min="1" max="9" value="7" ticks="9" tick-labels="[]" data-l10n-id="about-reader-content-width-label" data-l10n-attrs="label" slider-icon="chrome://global/skin/reader/content-width-20.svg" label="Inhaltsbreite"></moz-slider></div>
+              <div id="line-spacing-slider" class="slider-container"><moz-slider min="1" max="9" value="4" ticks="9" tick-labels="[]" data-l10n-id="about-reader-line-spacing-label" data-l10n-attrs="label" slider-icon="chrome://global/skin/reader/line-spacing-20.svg" label="Zeilenabstand"></moz-slider></div>
+              <hr>
+              <details id="about-reader-advanced-layout">
+                <summary class="accordion-header">
+                  <h2 data-l10n-id="about-reader-advanced-layout-header" id="about-reader-advanced-layout-header">Erweitert</h2>
+                  <span class="chevron-icon"></span>
+                </summary>
+                <div id="character-spacing-slider" class="slider-container"><moz-slider min="1" max="9" value="0" ticks="9" tick-labels="[&quot;Standard&quot;, &quot;Breit&quot;]" data-l10n-id="about-reader-character-spacing-label" data-l10n-attrs="label" slider-icon="chrome://global/skin/reader/character-spacing-20.svg" label="Zeichenabstand"></moz-slider></div>
+                <div id="word-spacing-slider" class="slider-container"><moz-slider min="1" max="9" value="0" ticks="9" tick-labels="[&quot;Standard&quot;, &quot;Breit&quot;]" data-l10n-id="about-reader-word-spacing-label" data-l10n-attrs="label" slider-icon="chrome://global/skin/reader/word-spacing-20.svg" label="Wortabstand"></moz-slider></div>
+                <label for="text-alignment-buttons" data-l10n-id="about-reader-text-alignment-label">Textausrichtung</label>
+                <div class="text-alignment-buttons radiorow" id="text-alignment-buttons"><input id="radio-itemleft-align-button" type="radio" class="radio-button" name="text-alignment" checked="true"><label for="radio-itemleft-align-button" class="left-align-button" data-l10n-id="about-reader-text-alignment-left" checked="true" title="Text links ausrichten"></label><input id="radio-itemcenter-align-button" type="radio" class="radio-button" name="text-alignment"><label for="radio-itemcenter-align-button" class="center-align-button" data-l10n-id="about-reader-text-alignment-center" title="Text zentriert ausrichten"></label><input id="radio-itemright-align-button" type="radio" class="radio-button" name="text-alignment"><label for="radio-itemright-align-button" class="right-align-button" data-l10n-id="about-reader-text-alignment-right" title="Text rechts ausrichten"></label></div>
+                <button class="text-layout-reset-button reset-button" data-l10n-id="about-reader-reset-button">Auf Standard zurücksetzen</button>
+              </details>
+            </li>
+          </ul>
+          <ul class="dropdown style-dropdown" id="regular-text-menu" hidden="">
+            <li>
+              <button class="dropdown-toggle toolbar-button style-button" aria-labelledby="toolbar-type-controls" data-telemetry-id="reader-type-controls">
+                <span class="hover-label" id="toolbar-type-controls" data-l10n-id="about-reader-toolbar-type-controls">Schrifteinstellungen</span>
+              </button>
+            </li>
+            <li class="dropdown-popup">
+              <div class="font-type-buttons radiorow"></div>
+              <div class="font-size-buttons buttonrow">
+                <button class="minus-button" data-l10n-id="about-reader-toolbar-minus" title="Kleinere Schrift"></button>
+                <span class="font-size-value"></span>
+                <button class="plus-button" data-l10n-id="about-reader-toolbar-plus" title="Größere Schrift"></button>
+              </div>
+              <div class="content-width-buttons buttonrow">
+                <button class="content-width-minus-button" data-l10n-id="about-reader-toolbar-contentwidthminus" title="Schmalerer Inhalt"></button>
+                <span class="content-width-value"></span>
+                <button class="content-width-plus-button" data-l10n-id="about-reader-toolbar-contentwidthplus" title="Breiterer Inhalt"></button>
+              </div>
+              <div class="line-height-buttons buttonrow">
+                <button class="line-height-minus-button" data-l10n-id="about-reader-toolbar-lineheightminus" title="Kleinerer Zeilenabstand"></button>
+                <span class="line-height-value"></span>
+                <button class="line-height-plus-button" data-l10n-id="about-reader-toolbar-lineheightplus" title="Größerer Zeilenabstand"></button>
+              </div>
+              <div class="color-scheme-buttons radiorow" id="regular-color-scheme" hidden=""></div>
+            </li>
+          </ul>
+          <ul class="dropdown colors-dropdown" id="custom-colors-color-scheme">
+            <li>
+              <button class="dropdown-toggle toolbar-button colors-button" aria-labelledby="toolbar-color-controls" data-telemetry-id="reader-color-controls">
+                <span class="hover-label" id="toolbar-color-controls" data-l10n-id="about-reader-toolbar-theme-controls">Theme</span>
+              </button>
+            </li>
+            <li class="dropdown-popup" id="color-controls">
+              <h2 data-l10n-id="about-reader-colors-menu-header" id="about-reader-colors-menu-header">Theme</h2>
+              <button-group aria-labelledby="about-reader-colors-menu-header" role="tablist">
+                <button is="named-deck-button" deck="tabs-deck" name="fxtheme" data-l10n-id="about-reader-fxtheme-tab" id="tabs-deck-button-fxtheme" role="tab" aria-selected="true" tabindex="0" selected="">Standard</button>
+                <button is="named-deck-button" deck="tabs-deck" name="customtheme" data-l10n-id="about-reader-customtheme-tab" id="tabs-deck-button-customtheme" role="tab" aria-selected="false" tabindex="-1">Benutzerdefiniert</button>
+              </button-group>
+              <named-deck id="tabs-deck" is-tabbed="" selected-view="fxtheme">
+                <div name="fxtheme" class="colors-menu-color-scheme-buttons radiorow" aria-labelledby="tabs-deck-button-fxtheme" role="tabpanel" slot="selected"><input id="radio-itemauto-button" type="radio" class="radio-button" name="color-scheme"><label for="radio-itemauto-button" class="auto-button" data-l10n-id="about-reader-color-auto-theme" title="Automatisches Theme">Automatisch</label><input id="radio-itemlight-button" type="radio" class="radio-button" name="color-scheme" checked="true"><label for="radio-itemlight-button" class="light-button" data-l10n-id="about-reader-color-light-theme" checked="true" title="Helles Theme">Hell</label><input id="radio-itemdark-button" type="radio" class="radio-button" name="color-scheme"><label for="radio-itemdark-button" class="dark-button" data-l10n-id="about-reader-color-dark-theme" title="Dunkles Theme">Dunkel</label><input id="radio-itemsepia-button" type="radio" class="radio-button" name="color-scheme"><label for="radio-itemsepia-button" class="sepia-button" data-l10n-id="about-reader-color-sepia-theme" title="Sepia-Theme">Sepia</label><input id="radio-itemcontrast-button" type="radio" class="radio-button" name="color-scheme"><label for="radio-itemcontrast-button" class="contrast-button" data-l10n-id="about-reader-color-contrast-theme" title="Kontrast-Theme">Kontrast</label><input id="radio-itemgray-button" type="radio" class="radio-button" name="color-scheme"><label for="radio-itemgray-button" class="gray-button" data-l10n-id="about-reader-color-gray-theme" title="Graues Theme">Grau</label></div>
+                <div name="customtheme" aria-labelledby="tabs-deck-button-customtheme" role="tabpanel" slot="">
+                  <ul class="custom-colors-selection"><li><color-input prop-name="foreground" data-l10n-id="about-reader-custom-colors-foreground" color="#14151A" title="Farbe bearbeiten">Text</color-input></li><li><color-input prop-name="background" data-l10n-id="about-reader-custom-colors-background" color="#FFFFFF" title="Farbe bearbeiten">Hintergrund</color-input></li><li><color-input prop-name="unvisited-links" data-l10n-id="about-reader-custom-colors-unvisited-links" color="#0060DF" title="Farbe bearbeiten">Unbesuchte Links</color-input></li><li><color-input prop-name="visited-links" data-l10n-id="about-reader-custom-colors-visited-links" color="#321C64" title="Farbe bearbeiten">Besuchte Links</color-input></li><li><color-input prop-name="selection-highlight" data-l10n-id="about-reader-custom-colors-selection-highlight" color="#FFFFCC" title="Farbe bearbeiten">Textmarker zum Vorlesen</color-input></li></ul>
+                  <button class="custom-colors-reset-button reset-button" data-l10n-id="about-reader-reset-button">Auf Standard zurücksetzen</button>
+                </div>
+              </named-deck>
+            </li>
+          </ul>
+        <ul class="dropdown narrate-dropdown"><li><button class="dropdown-toggle toolbar-button narrate-toggle" data-telemetry-id="reader-listen" aria-label="Laut vorlesen (N)"><span class="hover-label">Laut vorlesen (N)</span></button></li><li class="dropdown-popup"><h2 id="narrate-header">Laut vorlesen</h2><div class="narrate-row narrate-control"><button class="narrate-skip-previous" disabled="" aria-keyshortcuts="ArrowLeft" title="Zurück (←)"></button><button class="narrate-start-stop" aria-keyshortcuts="N" title="Wiedergeben (N)"></button><button class="narrate-skip-next" disabled="" aria-keyshortcuts="ArrowRight" title="Vor (→)"></button></div><div class="narrate-row narrate-rate"><span class="narrate-rate-icon slow" title="Vorlesen verlangsamen"></span><input class="narrate-rate-input" value="0" step="5" max="100" min="-100" type="range" aria-label="Choose a narration speed from -100 to 100, where 0 is the default speed." title="Geschwindigkeit"><span class="narrate-rate-icon fast" title="Vorlesen beschleunigen"></span></div><hr><h2 id="voice-header">Stimme</h2><div class="narrate-row narrate-voices"><div class="voiceselect voice-select"><button class="select-toggle" aria-controls="voice-options" aria-expanded="false" role="combobox" aria-labelledby="voice-header">
+      <span class="label"></span> <span class="current-voice">Standard</span>
+    </button>
+    <div class="options" id="voice-options" role="listbox" style="max-height: 1168px;"><button data-value="automatic" class="option selected" tabindex="-1" role="option" aria-selected="true">Standard</button><button data-value="urn:moz-tts:osx:com.apple.voice.compact.de-DE.Anna" class="option" tabindex="-1" role="option">Anna (Deutsch)</button><button data-value="urn:moz-tts:osx:com.apple.voice.enhanced.de-DE.Anna" class="option" tabindex="-1" role="option">Anna (erweitert) (Deutsch)</button><button data-value="urn:moz-tts:osx:com.apple.eloquence.de-DE.Eddy" class="option" tabindex="-1" role="option">Eddy (Deutsch (Deutschland)) (Deutsch)</button><button data-value="urn:moz-tts:osx:com.apple.eloquence.de-DE.Flo" class="option" tabindex="-1" role="option">Flo (Deutsch (Deutschland)) (Deutsch)</button><button data-value="urn:moz-tts:osx:com.apple.eloquence.de-DE.Grandma" class="option" tabindex="-1" role="option">Grandma (Deutsch (Deutschland)) (Deutsch)</button><button data-value="urn:moz-tts:osx:com.apple.eloquence.de-DE.Grandpa" class="option" tabindex="-1" role="option">Grandpa (Deutsch (Deutschland)) (Deutsch)</button><button data-value="urn:moz-tts:osx:com.apple.eloquence.de-DE.Reed" class="option" tabindex="-1" role="option">Reed (Deutsch (Deutschland)) (Deutsch)</button><button data-value="urn:moz-tts:osx:com.apple.eloquence.de-DE.Rocko" class="option" tabindex="-1" role="option">Rocko (Deutsch (Deutschland)) (Deutsch)</button><button data-value="urn:moz-tts:osx:com.apple.eloquence.de-DE.Sandy" class="option" tabindex="-1" role="option">Sandy (Deutsch (Deutschland)) (Deutsch)</button><button data-value="urn:moz-tts:osx:com.apple.eloquence.de-DE.Shelley" class="option" tabindex="-1" role="option">Shelley (Deutsch (Deutschland)) (Deutsch)</button></div></div></div></li></ul><button data-buttonid="pocket-button" data-telemetry-id="reader-save-to-pocket" class="toolbar-button pocket-button" aria-labelledby="label-pocket-button" style="background-image: url(&quot;chrome://global/skin/icons/pocket.svg&quot;);"><span class="hover-label" id="label-pocket-button" data-l10n-id="about-reader-toolbar-savetopocket">In Pocket speichern</span></button></div>
+      </div>
+    </div>
+
+    <div class="container" style="--line-height: 1.6em; --letter-spacing: -0.03em; --word-spacing: -0.05em; --text-alignment: start; --block-img-margin-right: unset; --block-img-margin-left: unset;" lang="de-x-mtfrom-en" dir="ltr">
+      <div class="header reader-header reader-show-element">
+        <a class="domain reader-domain" href="https://developers.google.com/cardboard/develop/unity/quickstart?hl=de">developers.google.com</a>
+        <div class="domain-border"></div>
+        <h1 class="reader-title">Kurzanleitung für Google Cardboard für Unity</h1>
+        <div class="credits reader-credits"></div>
+        <div class="meta-data">
+          <div class="reader-estimated-time" data-l10n-args="{&quot;range&quot;:&quot;12–14&quot;,&quot;rangePlural&quot;:&quot;other&quot;}" data-l10n-id="about-reader-estimated-read-time" dir="ltr">12–14 Minuten</div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="content">
+        <div class="moz-reader-content reader-show-element"><div id="readability-page-1" class="page">
+    
+  
+    <section>
+      
+      
+      
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+      
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav aria-label="Seitliches Menü">
+  
+
+  <div>
+    <div>
+      
+        <ul>
+          
+            <li>
+              
+  
+  <a href="https://developers.google.com/cardboard/develop" data-category="Site-Wide Custom Events" data-label="Tab: Entwickeln">
+  
+    <span>
+      Entwickeln
+   </span>
+    
+    <span data-icon="forward">
+    </span>
+    
+  
+  </a>
+  
+
+  
+              
+            </li>
+          
+            <li>
+              
+  
+  <a href="https://developers.google.com/cardboard/reference" data-category="Site-Wide Custom Events" data-label="Tab: Referenzen">
+  
+    <span>
+      Referenzen
+   </span>
+    
+    <span data-icon="forward">
+    </span>
+    
+  
+  </a>
+  
+
+  
+              
+            </li>
+          
+            <li>
+              
+  
+  <a href="https://developers.google.com/cardboard/manufacturers" data-category="Site-Wide Custom Events" data-label="Tab: Hersteller">
+  
+    <span>
+      Hersteller
+   </span>
+    
+  
+  </a>
+  
+
+  
+              
+            </li>
+          
+            <li>
+              
+  
+  <a href="https://developers.google.com/cardboard/community" data-category="Site-Wide Custom Events" data-label="Tab: Community">
+  
+    <span>
+      Community
+   </span>
+    
+    <span data-icon="forward">
+    </span>
+    
+  
+  </a>
+  
+
+  
+              
+            </li>
+          
+          
+          
+        </ul>
+      
+    </div>
+    
+      <div>
+        
+          
+          <ul>
+            <li><a href="https://developers.google.com/cardboard/develop" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /cardboard/develop"><span>Übersicht</span></a></li>
+
+  <li><a href="https://developers.google.com/cardboard/develop/branding-guidelines" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /cardboard/develop/branding-guidelines"><span>Branding-Richtlinien</span></a></li>
+
+  <li><p><span>Android NDK</span>
+      </p><ul><li><a href="https://developers.google.com/cardboard/develop/c/quickstart" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /cardboard/develop/c/quickstart"><span>Kurzanleitung</span></a></li><li><a href="https://developers.google.com/cardboard/develop/c/vulkan" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /cardboard/develop/c/vulkan"><span>Vulkan-Dateien generieren</span></a></li></ul></li>
+
+  <li><p><span>iOS</span>
+      </p><ul><li><a href="https://developers.google.com/cardboard/develop/ios/quickstart" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /cardboard/develop/ios/quickstart"><span>Kurzanleitung</span></a></li><li><a href="https://developers.google.com/cardboard/develop/ios/protobuf" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /cardboard/develop/ios/protobuf"><span>Protokollpufferdateien generieren</span></a></li></ul></li>
+
+  <li><p><span>Unity</span>
+      </p><ul><li><a href="https://developers.google.com/cardboard/develop/unity/quickstart" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /cardboard/develop/unity/quickstart"><span>Kurzanleitung</span></a></li><li><a href="https://developers.google.com/cardboard/develop/unity/gvr-migration" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /cardboard/develop/unity/gvr-migration"><span>Von GVR migrieren</span></a></li></ul></li>
+          </ul>
+        
+        
+          
+    
+  
+    
+  
+    
+  
+    
+  
+        
+        
+          
+    
+  
+        
+      </div>
+    
+  </div>
+</nav>
+        
+      
+      <section id="gc-wrapper">
+        <main role="main">
+          
+          
+          
+            
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<article>
+  
+  
+  
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+    
+    
+
+    <span>
+      
+      Mit Sammlungen den Überblick behalten
+    </span>
+    <span>
+      
+      Sie können Inhalte basierend auf Ihren Einstellungen speichern und kategorisieren.
+    </span>
+  
+  
+  
+  
+
+  
+  
+  
+
+  
+
+
+
+
+
+
+<div>
+
+  
+    
+    
+
+
+<p>In dieser Anleitung erfährst du, wie du das <a href="https://github.com/googlevr/cardboard-xr-plugin">Google Cardboard XR-Plug-in für
+Unity</a>, damit Unity Ihr eigenes
+Virtual-Reality-Erlebnisse.</p>
+
+<p>Mit dem Cardboard SDK kannst du ein Smartphone in eine VR-Plattform verwandeln. A
+Smartphone kann 3D-Szenen mit stereoskopischer Wiedergabe anzeigen, verfolgen und auf
+Kopfbewegungen und die Interaktion mit Apps, indem erkannt wird, wenn Nutzende die
+Schaltfläche für die Wiedergabe.</p>
+
+<p>Zum Einstieg verwenden Sie <strong>HelloCardboard</strong>, ein Demospiel, das die
+Hauptfunktionen des Cardboard SDK. In diesem Spiel sehen sich die Nutzer
+um Objekte zu finden und zu sammeln. Sie erfahren, wie Sie:</p>
+
+<ul>
+<li>Entwicklungsumgebung einrichten</li>
+<li>Demo-App herunterladen und erstellen</li>
+<li>QR-Code eines Cardboard scannen, um die Parameter zu speichern</li>
+<li>Die Kopfbewegungen der Nutzenden erfassen</li>
+<li>Stereoskopische Bilder rendern, indem die richtige Verzerrung für jedes Auge festgelegt wird</li>
+<li>VR-Modus aktivieren und deaktivieren</li>
+</ul>
+
+<h2 data-text="Entwicklungsumgebung einrichten" id="set_up_your_development_environment" tabindex="-1">Entwicklungsumgebung einrichten</h2>
+
+<p>Softwareanforderungen:</p>
+
+<ul>
+<li><a href="https://unity3d.com/get-unity/download/archive">Unity 2021.3.32f1</a> oder höher
+<ul>
+<li>Achten Sie darauf, während der Installation die Android- und iOS-Build-Unterstützung hinzuzufügen.</li>
+</ul></li>
+<li><a href="https://git-scm.com/">Git</a> muss installiert sein und die ausführbare Datei <code dir="ltr">git</code> muss
+in der Umgebungsvariable <code dir="ltr">PATH</code> sein. Siehe <a href="https://docs.unity3d.com/Manual/upm-git.html">Paketmanager-Git von Unity
+Support</a> finden Sie weitere
+Details.</li>
+</ul>
+
+<h2 data-text="SDK importieren und ein neues Projekt erstellen" id="import_the_sdk_and_create_a_new_project" tabindex="-1">SDK importieren und ein neues Projekt erstellen</h2>
+
+<p>Führen Sie die folgenden Schritte aus, um das Unity SDK zu importieren und ein neues Projekt zu erstellen.</p>
+
+<ol>
+<li>Öffnen Sie Unity und erstellen Sie ein neues <strong>3D-Projekt</strong>.</li>
+<li>Gehen Sie in Unity zu <strong>Window</strong> &gt; <strong>Paketmanager</strong>:</li>
+<li>Klicken Sie auf <strong>+</strong> und wählen Sie <strong>Paket aus Git-URL hinzufügen</strong> aus.</li>
+<li><code dir="ltr">https://github.com/googlevr/cardboard-xr-plugin.git</code> in den Text einfügen
+Eingabefeld. <br> Das Paket sollte den installierten Paketen hinzugefügt werden.</li>
+<li>Rufe das Paket <strong>Google Cardboard XR-Plug-in für Unity</strong> auf. Im
+<strong>Samples</strong> die Option <strong>Import into Project</strong> (In Projekt importieren). <br> Die Beispiel-Assets
+sollte in <code dir="ltr">Assets/Samples/Google Cardboard/&lt;version&gt;/Hello
+Cardboard</code> geladen werden.</li>
+</ol>
+
+<h2 data-text="HelloCardboard-Szene wird konfiguriert" id="configuring_hellocardboard_scene" tabindex="-1">HelloCardboard-Szene wird konfiguriert</h2>
+
+<ol>
+<li>Gehe zu <code dir="ltr">Assets/Samples/Google Cardboard/&lt;version&gt;/Hello
+Cardboard/Scenes</code>, wähle <strong>Open Scenes</strong> (Offene Szenen hinzufügen) und dann <strong>HelloCardboard</strong> aus.
+um die Beispielszene zu öffnen.</li>
+<li>Öffnen Sie das Menü <strong>Ebenen</strong> und wählen Sie <strong>Ebenen bearbeiten...</strong> aus.</li>
+<li>Definieren Sie eine neue Ebene namens „Interaktiv“.</li>
+<li>Klicken Sie auf das GameObject <strong>Treasure</strong>, um das Fenster „Inspector“ zu öffnen. Richte seine
+um "interaktiv" zu sein. Falls ein Pop-up-Fenster erscheint, in dem Sie gefragt werden,
+setzen Sie die Ebene auch für alle untergeordneten Objekte auf Interaktiv, klicken Sie auf "Ja,
+Kinder ändern“.</li>
+<li>Klicke auf den <strong>Player &gt; Kamera &gt; CardboardReticlePointer</strong>-GameObject in
+öffnen Sie das
+Inspector-Fenster. Im „Carboard Fadenkreuzzeiger“ Script, wählen Sie
+„Interaktiv“ als <strong>Maske für Retikelinteraktionsschicht</strong>.</li>
+</ol>
+
+<h2 data-text="Android-Projekteinstellungen konfigurieren" id="configuring_android_project_settings" tabindex="-1">Android-Projekteinstellungen konfigurieren</h2>
+
+<p>Gehen Sie zu <strong>Datei</strong> &gt; <strong>Build-Einstellungen</strong>.</p>
+
+<ol>
+<li>Wählen Sie <strong>Android</strong> und dann <strong>Plattform wechseln</strong> aus.</li>
+<li>Wähle <strong>Add Open Scenes</strong> (Offene Szenen hinzufügen) und dann <strong>HelloCardboard</strong> aus.</li>
+</ol>
+
+<h3 data-text="Player-Einstellungen" id="player_settings" tabindex="-1">Player-Einstellungen</h3>
+
+<h4 data-text="Auflösung und Präsentation" id="resolution_and_presentation" tabindex="-1">Auflösung und Präsentation</h4>
+
+<p>Gehen Sie zu <strong>Project Settings</strong> &gt; <strong>Player</strong> &gt; <strong>Auflösung und Präsentation</strong>.</p>
+
+<ol>
+<li>Lege für die <strong>Standardausrichtung</strong> <strong>Querformat links</strong> oder <strong>Querformat fest.
+Nach rechts</strong>.</li>
+<li>Deaktivieren Sie <strong>Optimierte Frame-Pacing</strong>.</li>
+</ol>
+
+<h4 data-text="Weitere Einstellungen" id="other_settings" tabindex="-1">Weitere Einstellungen</h4>
+
+<p>Gehen Sie zu <strong>Project Settings</strong> &gt; <strong>Player</strong> &gt; <strong>Weitere Einstellungen</strong>:</p>
+
+<ol>
+<li>Wählen Sie <code dir="ltr">OpenGLES2</code>, <code dir="ltr">OpenGLES3</code>, <code dir="ltr">Vulkan</code> oder eine beliebige Kombination davon in
+<strong>Grafik-APIs</strong>.</li>
+<li>Wählen Sie unter <strong>Minimum API API (Mindest-API-Wert) <code dir="ltr">Android 8.0 'Oreo' (API level 26)</code> oder höher aus
+Level</strong>:</li>
+<li>Wähle unter <strong>Ziel-API-Level</strong> mindestens <code dir="ltr">API level 33</code> aus.</li>
+<li>Wählen Sie <code dir="ltr">IL2CPP</code> in <strong>Scripting Backend</strong> (Skript-Back-End) aus.</li>
+<li>Wählen Sie die gewünschten Architekturen aus, indem Sie <code dir="ltr">ARMv7</code>, <code dir="ltr">ARM64</code> oder beide in
+<strong>Zielarchitekturen</strong>.</li>
+<li>Wähle <code dir="ltr">Require</code> unter <strong>Internet Access</strong> (Internetzugriff) aus.</li>
+<li>Geben Sie unter <strong>Paketname</strong> Ihre Unternehmensdomain an.</li>
+<li>Wenn <code dir="ltr">Vulkan</code> als <strong>Graphics API</strong> ausgewählt wurde:
+<ul>
+<li>Entfernen Sie in <strong>Vulkan das Häkchen für die Option <strong>Displaydrehung während des Renderings anwenden</strong>.
+Einstellungen</strong>.</li>
+<li>Wenn die Unity-Version 2021.2 oder höher ist, wählen Sie unter <strong>Texture <code dir="ltr">ETC2</code>
+Komprimierungsformat</strong>.</li>
+</ul></li>
+<li>Wenn die Unity-Version 2023.1 oder höher ist, wählen Sie <code dir="ltr">Activity</code> aus und löschen Sie
+<code dir="ltr">GameActivity</code> unter <strong>Anwendungseinstiegspunkt</strong>.</li>
+</ol>
+
+<h4 data-text="Veröffentlichungseinstellungen" id="publishing_settings" tabindex="-1">Veröffentlichungseinstellungen</h4>
+
+<p>Gehen Sie zu <strong>Project Settings</strong> &gt; <strong>Player</strong> &gt; <strong>Veröffentlichungseinstellungen</strong>:</p>
+
+<ol>
+<li>Wählen Sie im Bereich <strong>Build</strong> die Optionen <code dir="ltr">Custom Main Gradle Template</code> und <code dir="ltr">Custom
+Gradle Properties Template</code> aus.</li>
+<li><p>Fügen Sie die folgenden Zeilen in den
+<code dir="ltr">Assets/Plugins/Android/mainTemplate.gradle</code>:</p>
+<pre dir="ltr"><code dir="ltr">  implementation 'androidx.appcompat:appcompat:1.6.1'
+  implementation 'com.google.android.gms:play-services-vision:20.1.3'
+  implementation 'com.google.android.material:material:1.6.1'
+  implementation 'com.google.protobuf:protobuf-javalite:3.19.4'
+</code></pre></li>
+<li><p>Fügen Sie folgende Zeilen zu
+<code dir="ltr">Assets/Plugins/Android/gradleTemplate.properties</code>:</p>
+<pre dir="ltr"><code dir="ltr">  android.enableJetifier=true
+  android.useAndroidX=true
+</code></pre></li>
+</ol>
+
+<h4 data-text="Einstellungen für die Verwaltung des XR-Plug-ins" id="xr_plug-in_management_settings" tabindex="-1">Einstellungen für die Verwaltung des XR-Plug-ins</h4>
+
+<p>Gehen Sie zu <strong>Project Settings</strong> &gt; <strong>XR-Plug-in-Verwaltung</strong>.</p>
+
+<ol>
+<li>Wählen Sie unter <strong>Plug-in-Anbieter</strong> die Option <code dir="ltr">Cardboard XR Plugin</code> aus.</li>
+</ol>
+
+<h3 data-text="Projekt erstellen" id="build_your_project" tabindex="-1">Projekt erstellen</h3>
+
+<p>Gehen Sie zu <strong>Datei</strong> &gt; <strong>Build-Einstellungen</strong>.</p>
+
+<ol>
+<li>Wählen Sie <strong>Erstellen</strong> oder ein Gerät und dann <strong>Erstellen und ausführen</strong> aus.</li>
+</ol>
+
+<h2 data-text="iOS-Projekteinstellungen konfigurieren" id="configuring_ios_project_settings" tabindex="-1">iOS-Projekteinstellungen konfigurieren</h2>
+
+<p>Gehen Sie zu <strong>Datei</strong> &gt; <strong>Build-Einstellungen</strong>.</p>
+
+<ol>
+<li>Wählen Sie <strong>iOS</strong> und dann <strong>Plattform wechseln</strong> aus.</li>
+<li>Wähle <strong>Add Open Scenes</strong> (Offene Szenen hinzufügen) und dann <strong>HelloCardboard</strong> aus.</li>
+</ol>
+
+<h3 data-text="Player-Einstellungen" id="player_settings_2" tabindex="-1">Player-Einstellungen</h3>
+
+<h4 data-text="Auflösung und Präsentation" id="resolution_and_presentation_2" tabindex="-1">Auflösung und Präsentation</h4>
+
+<p>Gehen Sie zu <strong>Project Settings</strong> &gt; <strong>Player</strong> &gt; <strong>Auflösung und Präsentation</strong>.</p>
+
+<ol>
+<li>Lege für die <strong>Standardausrichtung</strong> <strong>Querformat links</strong> oder <strong>Querformat fest.
+Nach rechts</strong>.</li>
+</ol>
+
+<h4 data-text="Weitere Einstellungen" id="other_settings_2" tabindex="-1">Weitere Einstellungen</h4>
+
+<p>Gehen Sie zu <strong>Project Settings</strong> &gt; <strong>Player</strong> &gt; <strong>Weitere Einstellungen</strong>:</p>
+
+<ol>
+<li>Geben Sie unter <strong>Camera Usage Description</strong> (Beschreibung der Kameranutzung) den Wert <code dir="ltr">Cardboard SDK requires camera
+permission to read the QR code (required to get the encoded device
+parameters).</code> ein.</li>
+<li>Schreiben Sie unter <strong>Ziel-iOS-Mindestversion</strong> den Wert <code dir="ltr">12.0</code>.</li>
+<li>Geben Sie unter <strong>Paketname</strong> Ihre Unternehmensdomain an.</li>
+</ol>
+
+<h4 data-text="Einstellungen für die Verwaltung des XR-Plug-ins" id="xr_plug-in_management_settings_2" tabindex="-1">Einstellungen für die Verwaltung des XR-Plug-ins</h4>
+
+<p>Gehen Sie zu <strong>Project Settings</strong> &gt; <strong>XR-Plug-in-Verwaltung</strong>.</p>
+
+<ol>
+<li>Wählen Sie unter <strong>Plug-in-Anbieter</strong> die Option <code dir="ltr">Cardboard XR Plugin</code> aus.</li>
+</ol>
+
+<h3 data-text="Projekt erstellen" id="build_your_project_2" tabindex="-1">Projekt erstellen</h3>
+
+<p>Gehen Sie zu <strong>Datei</strong> &gt; <strong>Build-Einstellungen</strong>.</p>
+
+<ol>
+<li>Wählen Sie <strong>Erstellen</strong> oder <strong>Erstellen und ausführen</strong> aus.</li>
+</ol>
+
+<h2 data-text="Neu zentrieren" id="recentering" tabindex="-1">Neu zentrieren</h2>
+
+<p>Mit dem <a href="https://github.com/googlevr/cardboard">Cardboard SDK</a> kannst du
+den Kopf-Tracker neu zentrieren
+<a href="https://github.com/googlevr/cardboard-xr-plugin/blob/master/Runtime/Api.cs"><code dir="ltr">Recenter()</code></a></p>
+
+<p>Führen Sie die folgenden Schritte aus, um es mit der Beispielanwendung auszuprobieren:</p>
+
+<ol>
+<li>Bewege das Gerät an die Position, die du zentrieren möchtest (als neues Gerät verwenden)
+nach vorne gerichtete Kopfposition).</li>
+<li>Halte den Auslöser deines Cardboard-Geräts mindestens drei Sekunden lang aktiv.</li>
+<li>Lassen Sie den Auslöser los.</li>
+<li>Die Ausgangsposition ist jetzt in die Richtung, in die die Kamera zeigt.</li>
+</ol>
+
+<h2 data-text="VR-Modus aktivieren und deaktivieren" id="turning_vr_mode_on_and_off" tabindex="-1">VR-Modus aktivieren und deaktivieren</h2>
+
+<p><a href="https://docs.unity3d.com/Manual/com.unity.xr.management.html">Unity XR Plugin Management
+API</a> können Sie
+VR-Modus für das <a href="https://github.com/googlevr/cardboard-xr-plugin">Google Cardboard XR-Plug-in für
+Unity</a> Endnutzerdokumentation
+und Anwendungsbeispiele finden Sie im Unity-Tool <a href="https://docs.unity3d.com/Packages/com.unity.xr.management@3.2/manual/index.html">Endnutzer
+Dokumentation</a>.</p>
+
+<p>Die Szene <strong>VrMode</strong> aus dem HelloCardboard-Beispiel zeigt eine grundlegende Verwendung des
+oben erwähnten API. In dieser Szene kann der VR-Modus durch Tippen auf <strong>Beenden</strong> deaktiviert werden.
+<img alt="" src="https://developers.google.com/static/cardboard/develop/unity/images/quantum_ic_close_black_18.png?hl=de"> und kann durch einfaches
+irgendwo auf den Bildschirm tippen. Prüfen
+<a href="https://github.com/googlevr/cardboard-xr-plugin/blob/master/Samples%7E/hellocardboard-unity/Scripts/VrModeController.cs">VrModeController.cs</a>
+.</p>
+
+<h2 data-text="Nächste Schritte" id="next_steps" tabindex="-1">Nächste Schritte</h2>
+
+<ul>
+<li>Lies dir die <a href="https://developers.google.com/cardboard/develop/branding-guidelines?hl=de">Branding-Richtlinien für Cardboard</a> durch.</li>
+</ul>
+
+  
+
+  
+
+  
+</div>
+
+  
+
+  
+    
+      
+    
+    
+      
+    
+    
+  
+       
+    
+    
+      
+    
+  
+
+  
+  
+</article>
+
+
+
+  <p>Alle Rechte vorbehalten. Java ist eine eingetragene Marke von Oracle und/oder seinen Partnern.</p>
+  <p>Zuletzt aktualisiert: 2024-09-09&nbsp;(UTC).</p>
+
+
+
+
+
+
+
+  
+<p>
+  <template>
+  [{
+      "type": "thumb-down",
+      "id": "missingTheInformationINeed",
+      "label":"Benötigte Informationen nicht gefunden"
+    },{
+      "type": "thumb-down",
+      "id": "tooComplicatedTooManySteps",
+      "label":"Zu umständlich/zu viele Schritte"
+    },{
+      "type": "thumb-down",
+      "id": "outOfDate",
+      "label":"Nicht mehr aktuell"
+    },{
+      "type": "thumb-down",
+      "id": "translationIssue",
+      "label":"Problem mit der Übersetzung"
+    },{
+      "type": "thumb-down",
+      "id": "samplesCodeIssue",
+      "label":"Problem mit Beispielen/Code"
+    },{
+      "type": "thumb-down",
+      "id": "otherDown",
+      "label":"Sonstiges"
+    }]
+  </template>
+  <template>
+  [{
+      "type": "thumb-up",
+      "id": "easyToUnderstand",
+      "label":"Leicht verständlich"
+    },{
+      "type": "thumb-up",
+      "id": "solvedMyProblem",
+      "label":"Mein Problem wurde gelöst"
+    },{
+      "type": "thumb-up",
+      "id": "otherUp",
+      "label":"Sonstiges"
+    }]
+  </template>
+  
+  
+    <template>
+      {"lastModified": "Zuletzt aktualisiert: 2024-09-09\u00a0(UTC)."}
+    </template>
+  
+  
+    <template>
+      [[["Leicht verständlich","easyToUnderstand","thumb-up"],["Mein Problem wurde gelöst","solvedMyProblem","thumb-up"],["Sonstiges","otherUp","thumb-up"]],[["Benötigte Informationen nicht gefunden","missingTheInformationINeed","thumb-down"],["Zu umständlich/zu viele Schritte","tooComplicatedTooManySteps","thumb-down"],["Nicht mehr aktuell","outOfDate","thumb-down"],["Problem mit der Übersetzung","translationIssue","thumb-down"],["Problem mit Beispielen/Code","samplesCodeIssue","thumb-down"],["Sonstiges","otherDown","thumb-down"]],["Zuletzt aktualisiert: 2024-09-09&nbsp;(UTC)."]]
+    </template>
+  
+</p>
+            
+          
+        </main>
+        
+        
+        
+        
+        
+          
+
+        
+      </section></section>
+    
+    
+
+    
+    
+    
+      
+        
+
+      
+    
+    
+      
+    
+    
+    
+    
+  
+</div></div>
+      </div>
+
+      <div>
+        <div class="reader-message"></div>
+      </div>
+      <div aria-owns="toolbar"></div>
+    </div>
+  
+
+</body></html>
