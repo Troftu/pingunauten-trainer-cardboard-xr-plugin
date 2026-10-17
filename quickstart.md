@@ -173,7 +173,7 @@ Navigate to **Player** \> **Other Settings**.
 1. In **Camera Usage Description** , write `Cardboard SDK requires camera
    permission to read the QR code (required to get the encoded device
    parameters).`.
-2. In **Target minimum iOS Version** , write `12.0`.
+2. In **Target minimum iOS Version** , write `15.0`.
 3. Specify your company domain under **Package Name**.
 4. Check `Top Edge`, `Left Edge` and `Right Edge` in **Defer system gestures on
    edges**.
